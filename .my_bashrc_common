@@ -1,0 +1,34 @@
+PATH=$PATH:~/startscripts:~/progs/scala/bin:~/progs/bin
+export PATH
+
+GIT_SSH="/usr/bin/ssh"
+export GIT_SSH
+
+source ~/.keychain/${HOSTNAME}-sh
+
+alias pcwd="source ~/.scripts/pcwd"
+alias gita="git add"
+alias gitd="git diff"
+alias gitc="git commit"
+alias gits="git status"
+
+alias mv='mv -i'
+alias rm='rm -i'
+alias cp='cp -i'
+alias cd..='cd ..'
+alias ls='ls --color'
+alias la='ls -lA'
+alias ll='ls -l'
+alias sl='su -'
+alias r="cd /etc/init.d && ls --color"
+alias dum='du -m --max-depth=1'
+alias sl='ls --color'
+alias sd="cd /usr/src"
+alias tz="tar xzf"
+alias tj="tar xjf"
+alias rs="rsync -a --stats --rsh='ssh -p 35'"
+alias rsl="rsync -a --stats --rsh='ssh -p 35 -oNoneEnabled=yes -oNoneSwitch=yes -oHPNBufferSize=8192 -v'"
+alias rsn="rsync -a --stats --rsh='ssh -p 22'"
+alias m="mount"
+alias ka="killall -9"
+alias pstat="python -mpstats"

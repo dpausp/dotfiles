@@ -1,0 +1,10 @@
+YM_DIR=~/coding/projAugustiner/yamoda
+export YM_DIR
+
+VIA_DIR=~/coding/ai4/viator
+export VIA_DIR
+
+alias au="cd ~/coding/projAugustiner/"
+alias ym="cd $YM_DIR"
+alias via="cd $VIA_DIR"
+
