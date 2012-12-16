@@ -4,6 +4,6 @@
 [submodule "vim-coffee-script"]    
     path = .vim/bundle/vim-coffee-script
     url = git://github.com/kchmck/vim-coffee-script.git
-[submodule "vim-ragtag"]    
-    path = .vim/bundle/vim-ragtag
-    url = git://github.com/tpope/vim-ragtag.git
+[submodule ".vim/bundle/vim-ragtag"]
+	path = .vim/bundle/vim-ragtag
+	url = git://github.com/tpope/vim-ragtag.git
