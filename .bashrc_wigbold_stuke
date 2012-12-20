@@ -102,8 +102,8 @@ if [ -f ~/.dotfiles/.my_bashrc_projects ]; then
     . ~/.dotfiles/.my_bashrc_projects
 fi
 
-if [ -f ~/.dotfiles/.my_bashrc_gentoo ]; then
-    . ~/.dotfiles/.my_bashrc_gentoo
+if [ -f ~/.dotfiles/.my_bashrc_debian ]; then
+    . ~/.dotfiles/.my_bashrc_debian
 fi
 
 if [ -f ~/.dotfiles/.my_bashrc_common ]; then
