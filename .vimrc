@@ -31,6 +31,8 @@ set dir=~/.vim/sessions
 set title
 set titlestring=%F
 
+syntax on
+
 filetype plugin indent on
 
 autocmd Filetype html set ts=2 sts=2 sw=2
