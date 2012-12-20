@@ -1,13 +1,13 @@
 source /etc/profile
 
-if [ -f ~/.my_bashrc_projects ]; then
-    . ~/.my_bashrc_projects
+if [ -f ~/.dotfiles/.my_bashrc_projects ]; then
+    . ~/.dotfiles/.my_bashrc_projects
 fi
 
-if [ -f ~/.my_bashrc_gentoo ]; then
-    . ~/.my_bashrc_gentoo
+if [ -f ~/.dotfiles/.my_bashrc_gentoo ]; then
+    . ~/.dotfiles/.my_bashrc_gentoo
 fi
 
-if [ -f ~/.my_bashrc_common ]; then
-    . ~/.my_bashrc_common
+if [ -f ~/.dotfiles/.my_bashrc_common ]; then
+    . ~/.dotfiles/.my_bashrc_common
 fi
