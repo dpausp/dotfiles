@@ -53,8 +53,8 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 let g:syntastic_python_checker_args = '--rcfile=~/coding/python/pylintrc-pydev' 
 
 set pastetoggle=<F8>
-map <F6> :set number <CR>
-map <F7> :set nonumber <CR>
+map <F6> :set number <CR> :set mouse+=a <CR>
+map <F7> :set nonumber <CR> :set mouse-=a <CR>
 map <C-T><C-H> :set filetype=htmljinja <CR>
 map <C-T><C-K> :set filetype=coffee <CR>
 map <C-T><C-P> :set filetype=python <CR>
