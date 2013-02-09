@@ -11,3 +11,6 @@ fi
 if [ -f ~/.dotfiles/.my_bashrc_common ]; then
     . ~/.dotfiles/.my_bashrc_common
 fi
+
+export PATH=$PATH:/home/tobixx0/progs/scripts
+export LC_MESSAGES="C"
