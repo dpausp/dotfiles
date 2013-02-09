@@ -6,11 +6,16 @@ export GIT_SSH
 
 source ~/.keychain/${HOSTNAME}-sh
 
+LC_MESSAGES=C
+export $LC_MESSAGES
+
 alias pcwd="source ~/.scripts/pcwd"
 alias gita="git add"
 alias gitd="git diff"
 alias gitc="git commit"
 alias gits="git status"
+alias gitb="git bisect"
+alias gitp="git push"
 
 alias mv='mv -i'
 alias rm='rm -i'
@@ -30,5 +35,5 @@ alias rs="rsync -a --stats --rsh='ssh -p 35'"
 alias rsl="rsync -a --stats --rsh='ssh -p 35 -oNoneEnabled=yes -oNoneSwitch=yes -oHPNBufferSize=8192 -v'"
 alias rsn="rsync -a --stats --rsh='ssh -p 22'"
 alias m="mount"
-alias ka="killall -9"
 alias pstat="python -mpstats"
+alias shm="cd /dev/shm"

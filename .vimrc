@@ -50,11 +50,12 @@ au BufRead,BufNewFile *.gradle  set filetype=groovy
 au BufRead,BufNewFile *.sbt set filetype=scala
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
-let g:syntastic_python_checker_args = '--rcfile=~/coding/python/pylintrc-pydev' 
-
-set pastetoggle=<F8>
-map <F6> :set number <CR> :set mouse+=a <CR>
-map <F7> :set nonumber <CR> :set mouse-=a <CR>
+"let g:syntastic_python_checker_args = '--rcfile=~/coding/python/pylintrc-pydev' 
+let g:syntastic_python_checker = 'flake8'
+let g:syntastic_python_checker_args = '--ignore=E501'
+set pastetoggle=<C-T><C-T>
+map <C-P><C-P> :set number <CR> :set mouse+=a <CR>
+map <C-P><C-O> :set nonumber <CR> :set mouse-=a <CR>
 map <C-T><C-H> :set filetype=htmljinja <CR>
 map <C-T><C-K> :set filetype=coffee <CR>
 map <C-T><C-P> :set filetype=python <CR>

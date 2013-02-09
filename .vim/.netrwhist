@@ -1,7 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/dev/shm/flot-flot-f0e78fc/examples'
-let g:netrw_dirhist_2='/home/tobixx0/coding/uni/ai4/viator/viator-main/.git'
-let g:netrw_dirhist_3='/home/tobixx0/.vim'
-let g:netrw_dirhist_4='/mnt/progs/adhocracy.buildout/eggs/psycopg2-2.2.2-py2.7-linux-x86_64.egg/psycopg2'
-let g:netrw_dirhist_5='/var/local/redmine/public/themes/pirate_highrise/javascripts'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/tobixx0/coding/uni/ai4/viator/viator_buildout/src/txjsonrpc/.git'
+let g:netrw_dirhist_2='/home/tobixx0/coding/uni/ai4/viator/viator_buildout/src/txjsonrpc-new/txjsonrpc_viator.egg-info'
+let g:netrw_dirhist_3='/home/tobixx0/coding/uni/ai4/viator/viator_buildout/src/viator.daemon/.git'
+let g:netrw_dirhist_4='/home/tobixx0/coding/uni/ai4/viator/viator_buildout/src/viator.vmservice/.git'
