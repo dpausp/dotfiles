@@ -12,6 +12,7 @@ export $LC_MESSAGES
 alias pcwd="source ~/.scripts/pcwd"
 alias gita="git add"
 alias gitd="git diff"
+alias gitck="git checkout"
 alias gitc="git commit"
 alias gits="git status"
 alias gitb="git bisect"
