@@ -48,6 +48,7 @@ let g:pydiction_location = '~/.vim/pydiction-1.2/complete-dict'
 
 au BufRead,BufNewFile *.gradle  set filetype=groovy
 au BufRead,BufNewFile *.sbt set filetype=scala
+autocmd! BufRead,BufNewFile *.ics setfiletype icalendar
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 "let g:syntastic_python_checker_args = '--rcfile=~/coding/python/pylintrc-pydev' 
@@ -55,8 +56,25 @@ let g:syntastic_python_checker = 'flake8'
 let g:syntastic_python_checker_args = '--ignore=E501'
 set pastetoggle=<C-T><C-T>
 map <C-P><C-P> :set number <CR> :set mouse+=a <CR>
-map <C-P><C-O> :set nonumber <CR> :set mouse-=a <CR>
+map <C-P><C-O> :set nonumber <CR> :set mouse= <CR>
 map <C-T><C-H> :set filetype=htmljinja <CR>
 map <C-T><C-K> :set filetype=coffee <CR>
 map <C-T><C-P> :set filetype=python <CR>
 map <F10> :w <CR> :make <CR>
+map <F3> :NERDTreeToggle<CR>
+map <leader>d <Plug>Kwbd<CR>
+nmap gt :bn<CR>
+nmap gT :bp<CR>
+nmap g0 :bfirst<CR>
+nmap g$ :blast<CR>
+" change buffer with single click
+let g:miniBufExplUseSingleClick = 1
+" force MBE to try to place selected
+" buffers into a window that does not have a nonmodifiable buffer.
+" The upshot of this should be that if you go into MBE and select
+" a buffer, the buffer should not show up in a window that is
+" hosting an explorer.
+ let g:miniBufExplModSelTarget = 1
+
+" let the NERDTree ignore some file type (generated stuff and the like)
+let NERDTreeIgnore=['\.vim$', '\~$', '\.js$']

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ "$1" == "vdr" ]; then
+    ln -sf .dotfiles/.bashrc_vdr .bashrc
+    ln -sf .dotfiles/.vimrc .vimrc
+    ln -sf .dotfiles/.vim .vim
+elif [ "$1" == "debian" ]; then
+    ln -sf .dotfiles/.inputrc_debian .inputrc
+    ln -sf .dotfiles/.bashrc_debian .bashrc
+    ln -sf .dotfiles/.vimrc .vimrc
+    ln -sf .dotfiles/.vim .vim
+else
+    echo "unknown?!"
+fi
