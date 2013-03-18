@@ -30,6 +30,7 @@ set backupdir=~/.vim/sessions
 set dir=~/.vim/sessions
 set title
 set titlestring=%F
+set hlsearch
 
 syntax on
 
