@@ -7,8 +7,12 @@ export YMB_DIR
 VIAB_DIR=~/coding/ai4/viator/viator_buildout/
 export VIAB_DIR
 
+VIA_DIR=~/coding/ai4/viator/viator_buildout/src
+export VIA_DIR
+
 alias au="cd ~/coding/projAugustiner/"
 alias ym="cd $YM_DIR"
 alias ymb="cd $YMB_DIR"
+alias via="cd $VIA_DIR"
 alias viab="cd $VIAB_DIR"
 
