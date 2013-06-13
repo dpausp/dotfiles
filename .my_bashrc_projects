@@ -10,7 +10,15 @@ export VIAB_DIR
 VIA_DIR=~/coding/ai4/viator/viator_buildout/src
 export VIA_DIR
 
+MT_DIR=~/coding/tum/mediatum
+export MT_DIR
+
+MTP_DIR=~/coding/tum/mediatum_playground
+export MTP_DIR
+
 alias au="cd ~/coding/projAugustiner/"
+alias mt="cd $MT_DIR"
+alias mtp="cd $MTP_DIR"
 alias ym="cd $YM_DIR"
 alias ymb="cd $YMB_DIR"
 alias via="cd $VIA_DIR"
