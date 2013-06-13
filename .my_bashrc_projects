@@ -1,7 +1,7 @@
-YM_DIR=~/coding/projAugustiner/yamoda_buildout/src/yamoda
+YM_DIR=~/coding/tum/projAugustiner/yamoda_buildout/src/yamoda
 export YM_DIR
 
-YMB_DIR=~/coding/projAugustiner/yamoda_buildout
+YMB_DIR=~/coding/tum/projAugustiner/yamoda_buildout
 export YMB_DIR
 
 VIAB_DIR=~/coding/ai4/viator/viator_buildout/
@@ -16,7 +16,6 @@ export MT_DIR
 MTP_DIR=~/coding/tum/mediatum_playground
 export MTP_DIR
 
-alias au="cd ~/coding/projAugustiner/"
 alias mt="cd $MT_DIR"
 alias mtp="cd $MTP_DIR"
 alias ym="cd $YM_DIR"
