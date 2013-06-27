@@ -1,13 +1,15 @@
-PATH=$PATH:~/startscripts:~/progs/scala/bin:~/progs/bin
-export PATH
-
-GIT_SSH="/usr/bin/ssh"
-export GIT_SSH
-
 source ~/.keychain/${HOSTNAME}-sh
 
-LC_MESSAGES=C
-export $LC_MESSAGES
+export PATH=$PATH:~/startscripts:~/progs/scala/bin:~/progs/bin:~/.local/bin/
+export LC_MESSAGES=C
+export EDITOR=vim
+export GIT_PAGER="vim -R -"
+export GIT_SSH="/usr/bin/ssh"
+
+# bash settings
+export HISTFILESIZE=20000
+export HISTSIZE=20000
+export HISTIGNORE="fg:exit:popd:cd ..:cd ..:pwd:history:ls:la:[ \t]*:??:cd:?:"
 
 alias pcwd="source ~/.scripts/pcwd"
 alias gita="git add"

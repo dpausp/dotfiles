@@ -16,6 +16,9 @@ export MT_DIR
 MTP_DIR=~/coding/tum/mediatum_playground
 export MTP_DIR
 
+MTCVS_DIR=~/coding/tum/mediatum.cvs/
+export MTCVS_DIR
+
 alias mt="cd $MT_DIR"
 alias mtp="cd $MTP_DIR"
 alias ym="cd $YM_DIR"
@@ -23,3 +26,6 @@ alias ymb="cd $YMB_DIR"
 alias via="cd $VIA_DIR"
 alias viab="cd $VIAB_DIR"
 
+alias mt_cvsfetch="cd $MTCVS_DIR && rsync -av mediatum.cvs.sourceforge.net::cvsroot/mediatum/* . --progress --delete && cd $MT_DIR && git cvsimport"
+
+alias mt_ramstart="rsync -rlt /home/stenzel/coding/tum/mediatum /dev/shm/ --progress --delete && cd /dev/shm/mediatum/ && python start.py"
