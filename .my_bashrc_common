@@ -10,6 +10,9 @@ export GIT_SSH="/usr/bin/ssh"
 export HISTFILESIZE=20000
 export HISTSIZE=20000
 export HISTIGNORE="fg:exit:popd:cd ..:cd ..:pwd:history:ls:la:[ \t]*:??:cd:?:"
+export PROMPT_COMMAND="history -a"
+shopt -s histappend
+alias u='history -n'
 
 alias pcwd="source ~/.scripts/pcwd"
 alias gita="git add"
