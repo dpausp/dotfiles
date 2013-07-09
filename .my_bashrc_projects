@@ -28,4 +28,6 @@ alias viab="cd $VIAB_DIR"
 
 alias mt_cvsfetch="cd $MTCVS_DIR && rsync -av mediatum.cvs.sourceforge.net::cvsroot/mediatum/* . --progress --delete && cd $MT_DIR && git cvsimport"
 
-alias mt_ramstart="rsync -rlt /home/stenzel/coding/tum/mediatum /dev/shm/ --progress --delete && cd /dev/shm/mediatum/ && python start.py"
+alias mt_db="sudo tar xzf /var/lib/mysql-current.tar.gz -C /dev/shm/ && sudo service mysql restart"
+
+alias mt_ramstart="mkdir /dev/shm/mediatum_data; rsync -rlt /home/stenzel/coding/tum/mediatum /dev/shm/ --progress --delete && cd /dev/shm/mediatum/ && python start.py"
