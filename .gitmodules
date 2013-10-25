@@ -25,3 +25,6 @@
 [submodule ".vim/bundle/minibufexpl.vim"]
 	path = .vim/bundle/minibufexpl.vim
 	url = https://github.com/fholgado/minibufexpl.vim
+[submodule ".bash/git-aware-prompt"]
+	path = .bash/git-aware-prompt
+	url = https://github.com/jimeh/git-aware-prompt
