@@ -57,7 +57,7 @@ let g:syntastic_python_checker = 'flake8'
 let g:syntastic_python_checker_args = '--ignore=E501'
 set pastetoggle=<C-T><C-T>
 map <C-P><C-P> :set number <CR> :set mouse=a <CR>
-map <C-P><C-O> :set nonumber <CR> :set mouse= <CR>
+map <C-P><C-O> :set nonumber <CR> :set mouse-=a <CR>
 map <C-P><C-D> "=strftime("%d.%m.%Y")<CR>P
 map <C-T><C-H> :set filetype=htmljinja <CR>
 map <C-T><C-K> :set filetype=coffee <CR>
@@ -65,6 +65,7 @@ map <C-T><C-P> :set filetype=python <CR>
 map <F10> :w <CR> :make <CR>
 map <F3> :NERDTreeToggle<CR>
 map <leader>d <Plug>Kwbd<CR>
+map <C-A> "_ddP
 
 nmap gt :bn<CR>
 nmap gT :bp<CR>
@@ -81,4 +82,4 @@ let g:miniBufExplUseSingleClick = 1
  let g:miniBufExplModSelTarget = 1
 
 " let the NERDTree ignore some file type (generated stuff and the like)
-let NERDTreeIgnore=['\.vim$', '\~$', '\.js$']
+let NERDTreeIgnore=['\.vim$', '\~$', '\.js$', '\.map$']
