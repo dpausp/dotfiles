@@ -16,3 +16,6 @@ export PATH=$PATH:/home/tobixx0/progs/scripts
 export LC_MESSAGES="C"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# added by Anaconda 1.7.0 installer
+#export PATH="/home/tobixx0/anaconda/bin:$PATH"
