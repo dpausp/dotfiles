@@ -22,8 +22,8 @@ set commentstring=" \ #\ %s"
 set foldlevel=0
 set clipboard+=unnamed
 set mouse=a
-set spell spelllang=de
 set nospell
+set spelllang=de
 set ls=2
 set autochdir
 set backupdir=~/.vim/sessions
