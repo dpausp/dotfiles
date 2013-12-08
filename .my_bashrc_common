@@ -47,5 +47,5 @@ alias shm="cd /dev/shm"
 # git-aware-prompt
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source $GITAWAREPROMPT/main.sh
-export PS1="\[\033[01;34m\]\u@\h\[\033[01;32m\] \w \$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+PS1="\[\e[01;34m\]\u@\h\[\e[01;32m\] \w \$git_branch\[\e[01;31m\]\$git_dirty\[\e[0m\]> "
 

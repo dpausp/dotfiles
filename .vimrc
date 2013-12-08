@@ -48,6 +48,7 @@ colorscheme elflord
 let g:pydiction_location = '~/.vim/pydiction-1.2/complete-dict'
 
 au BufRead,BufNewFile *.gradle  set filetype=groovy
+au BufRead,BufNewFile *.html.j2 set filetype=htmljinja
 au BufRead,BufNewFile *.sbt set filetype=scala
 autocmd! BufRead,BufNewFile *.ics setfiletype icalendar
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
