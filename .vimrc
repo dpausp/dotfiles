@@ -58,8 +58,8 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 let g:syntastic_python_checker = 'flake8'
 let g:syntastic_python_checker_args = '--ignore=E501'
 set pastetoggle=<C-T><C-T>
-map <C-P><C-P> :set number <CR> :set mouse=a <CR>
-map <C-P><C-O> :set nonumber <CR> :set mouse-=a <CR>
+map <C-P><C-P> :set number mouse=a <CR>
+map <C-P><C-O> :set nonumber mouse-=a <CR>
 map <C-P><C-D> "=strftime("%d.%m.%Y")<CR>P
 map <C-T><C-H> :set filetype=htmljinja <CR>
 map <C-T><C-K> :set filetype=coffee <CR>
