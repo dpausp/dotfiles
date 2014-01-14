@@ -50,3 +50,8 @@ export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source $GITAWAREPROMPT/main.sh
 PS1="\[\e[01;34m\]\u@\h\[\e[01;32m\] \w \$git_branch\[\e[01;31m\]\$git_dirty\[\e[0m\]> "
 
+# tmux settings 
+
+if [ -n "$TMUX" ]; then
+export TERM=screen-256color
+fi

@@ -2,6 +2,7 @@
 
 ln -sf .dotfiles/.gtkrc-2.0.mine .
 ln -sf .dotfiles/.bash .
+ln -sf .dotfiles/.tmux.conf .
 
 if [ "$1" == "vdr" ]; then
     ln -sf .dotfiles/.bashrc_vdr .bashrc
