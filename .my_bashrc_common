@@ -55,3 +55,10 @@ PS1="\[\e[01;34m\]\u@\h\[\e[01;32m\] \w \$git_branch\[\e[01;31m\]\$git_dirty\[\e
 if [ -n "$TMUX" ]; then
 export TERM=screen-256color
 fi
+
+source ~/.dotfiles/preexec.bash
+
+precmd() {
+    [[ $TMUX == *tmux* ]] && tmux set -g status-left "#[fg=green,bold][#S] $(whoami)@#H:$(pwd | sed -e "s#${HOME}#~#g")" > /dev/null
+}
+preexec_install
