@@ -2,7 +2,7 @@
 #export YMB_DIR=~/coding/tum/projAugustiner/yamoda_buildout
 export MT_DIR=~/coding/tum/mediatum
 export MTF_DIR=~/coding/tum/mediatum_flask
-export MTS_DIR=~/coding/tum/mediatum-survey_flask
+export MTS_DIR=~/coding/tum/mediatum-survey
 
 #alias ym="cd $YM_DIR"
 #alias ymb="cd $YMB_DIR"
