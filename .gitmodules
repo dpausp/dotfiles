@@ -28,3 +28,6 @@
 [submodule ".bash/git-aware-prompt"]
 	path = .bash/git-aware-prompt
 	url = https://github.com/jimeh/git-aware-prompt
+[submodule ".vim/bundle/vim-less"]
+	path = .vim/bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git
