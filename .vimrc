@@ -37,9 +37,9 @@ syntax on
 filetype plugin indent on
 
 autocmd Filetype html set ts=2 sts=2 sw=2
-autocmd Filetype htmljinja set ts=2 sts=2 sw=2
 autocmd Filetype javascript set ts=2 sts=2 sw=2
 autocmd Filetype jinja set ts=2 sts=2 sw=2
+autocmd Filetype htmljinja set ts=2 sts=2 sw=2
 autocmd Filetype scala set ts=2 sts=2 sw=2
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
@@ -48,6 +48,7 @@ colorscheme elflord
 let g:pydiction_location = '~/.vim/pydiction-1.2/complete-dict'
 
 au BufRead,BufNewFile *.gradle  set filetype=groovy
+au BufRead,BufNewFile *.j2* set filetype=htmljinja
 au BufRead,BufNewFile *.html.j2 set filetype=htmljinja
 au BufRead,BufNewFile *.j2.html set filetype=htmljinja
 au BufRead,BufNewFile *.sbt set filetype=scala
