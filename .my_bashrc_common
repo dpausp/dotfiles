@@ -62,3 +62,5 @@ precmd() {
     [[ $TMUX == *tmux* ]] && tmux set -g status-left "#[fg=green,bold][#S] $(whoami)@#H:$(pwd | sed -e "s#${HOME}#~#g")" > /dev/null
 }
 preexec_install
+
+source ~/.bashrc.local
