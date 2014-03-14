@@ -85,4 +85,4 @@ let g:miniBufExplUseSingleClick = 1
  let g:miniBufExplModSelTarget = 1
 
 " let the NERDTree ignore some file type (generated stuff and the like)
-let NERDTreeIgnore=['\.vim$', '\~$', '\.js$', '\.map$']
+let NERDTreeIgnore=['\.vim$', '\~$', '\.js$', '\.map$', '\.pyc$']
