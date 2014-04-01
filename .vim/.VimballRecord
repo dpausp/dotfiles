@@ -1,0 +1,1 @@
+SyntaxRange-1.01.vmb: call delete('/home/stenzel/.vim/autoload/SyntaxRange.vim')|call delete('/home/stenzel/.vim/plugin/SyntaxRange.vim')|call delete('/home/stenzel/.vim/doc/SyntaxRange.txt')
