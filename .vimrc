@@ -63,12 +63,15 @@ map <C-P><C-P> :set number mouse=a <CR>
 map <C-P><C-O> :set nonumber mouse-=a <CR>
 map <C-P><C-D> "=strftime("%d.%m.%Y")<CR>P
 map <C-T><C-H> :set filetype=htmljinja <CR>
+map <C-T><C-I> :set filetype=jinja <CR>
 map <C-T><C-K> :set filetype=coffee <CR>
 map <C-T><C-P> :set filetype=python <CR>
+map <C-T><C-J> :set filetype=jade <CR>
 map <F10> :w <CR> :make <CR>
 map <F3> :NERDTreeToggle<CR>
 map <leader>d <Plug>Kwbd<CR>
 map <C-A> "_ddP
+map <C-F><C-F> :%s/\| {%/-/g\|:%s/%}//g<CR>
 
 nmap gt :bn<CR>
 nmap gT :bp<CR>

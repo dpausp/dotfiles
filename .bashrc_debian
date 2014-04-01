@@ -109,3 +109,5 @@ fi
 if [ -f ~/.dotfiles/.my_bashrc_common ]; then
     . ~/.dotfiles/.my_bashrc_common
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
