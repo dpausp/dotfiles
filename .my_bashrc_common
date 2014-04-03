@@ -59,8 +59,15 @@ fi
 source ~/.dotfiles/preexec.bash
 
 precmd() {
-    [[ $TMUX == *tmux* ]] && tmux set -g status-left "#[fg=green,bold][#S] $(whoami)@#H:$(pwd | sed -e "s#${HOME}#~#g")" > /dev/null
+    W=`whoami`@`hostname`:`pwd | sed -e"s#${HOME}#~#"`
+    [[ $TMUX == *tmux* ]] && tmux set -g status-left "#[fg=green,bold][#S] $W" > /dev/null
+    [[ $DISPLAY ]] && preexec_xterm_title $W
 }
+
+preexec() {
+    true
+}
+
 preexec_install
 
 source ~/.bashrc.local
