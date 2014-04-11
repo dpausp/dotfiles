@@ -41,6 +41,8 @@ autocmd Filetype javascript set ts=2 sts=2 sw=2
 autocmd Filetype jinja set ts=2 sts=2 sw=2
 autocmd Filetype htmljinja set ts=2 sts=2 sw=2
 autocmd Filetype scala set ts=2 sts=2 sw=2
+autocmd Filetype jade set ts=2 sts=2 sw=2
+autocmd Filetype ruby set ts=2 sts=2 sw=2
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 colorscheme elflord
@@ -56,8 +58,7 @@ autocmd! BufRead,BufNewFile *.ics setfiletype icalendar
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 "let g:syntastic_python_checker_args = '--rcfile=~/coding/python/pylintrc-pydev' 
-let g:syntastic_python_checker = 'flake8'
-let g:syntastic_python_checker_args = '--ignore=E501'
+"let g:syntastic_python_checker_args = '--ignore=E501'
 set pastetoggle=<C-T><C-T>
 map <C-P><C-P> :set number mouse=a <CR>
 map <C-P><C-O> :set nonumber mouse-=a <CR>
