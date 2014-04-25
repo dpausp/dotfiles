@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/vim-jade"]
 	path = .vim/bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade.git
+[submodule ".vim/bundle/vim-ansible-yaml"]
+	path = .vim/bundle/vim-ansible-yaml
+	url = git://github.com/chase/vim-ansible-yaml.git
