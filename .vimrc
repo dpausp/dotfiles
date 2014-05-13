@@ -31,6 +31,7 @@ set dir=~/.vim/sessions
 set title
 set titlestring=%F
 set hlsearch
+set textwidth=0
 
 syntax on
 
@@ -68,6 +69,7 @@ map <C-T><C-I> :set filetype=jinja <CR>
 map <C-T><C-K> :set filetype=coffee <CR>
 map <C-T><C-P> :set filetype=python <CR>
 map <C-T><C-J> :set filetype=jade <CR>
+map <C-T><C-M> :set filetype=markdown <CR>
 map <F10> :w <CR> :make <CR>
 map <F3> :NERDTreeToggle<CR>
 map <leader>d <Plug>Kwbd<CR>
