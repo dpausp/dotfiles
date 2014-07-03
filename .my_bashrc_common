@@ -1,4 +1,4 @@
-source ~/.keychain/${HOSTNAME}-sh
+source ~/.keychain/${HOSTNAME}-sh > /dev/null
 
 export PATH=$PATH:~/startscripts:~/progs/scala/bin:~/progs/bin:~/.local/bin/:~/node_modules/.bin:~/.cabal/bin
 export LC_MESSAGES=C
@@ -17,12 +17,15 @@ alias u='history -n'
 alias pcwd="source ~/.scripts/pcwd"
 alias gita="git add"
 alias gitd="git diff"
+alias gitdc="git diff --cached"
 alias gitl="git log"
-alias gitck="git checkout"
 alias gitc="git commit"
 alias gits="git status"
 alias gitb="git bisect"
 alias gitp="git push"
+
+alias gitaww="git diff -w --no-color | git apply --cached --ignore-whitespace" # add changes, ignore whitespace
+
 
 alias mv='mv -i'
 alias rm='rm -i'
