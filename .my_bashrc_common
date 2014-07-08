@@ -1,6 +1,6 @@
 source ~/.keychain/${HOSTNAME}-sh > /dev/null
 
-export PATH=$PATH:~/startscripts:~/progs/scala/bin:~/progs/bin:~/.local/bin/:~/node_modules/.bin:~/.cabal/bin
+export PATH=$PATH:~/.scripts/:~/progs/scala/bin:~/progs/bin:~/.local/bin/:~/node_modules/.bin:~/.cabal/bin
 export LC_MESSAGES=C
 export EDITOR=vim
 export GIT_PAGER="vim -R -"
@@ -48,6 +48,7 @@ alias m="mount"
 alias pstat="python -mpstats"
 alias shm="cd /dev/shm"
 alias d='docker'
+alias dpidof="docker inspect --format {{.State.Pid}}"
 
 # git-aware-prompt
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
