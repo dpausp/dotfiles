@@ -9,7 +9,7 @@ export GIT_SSH="/usr/bin/ssh"
 # bash settings
 export HISTFILESIZE=20000
 export HISTSIZE=20000
-export HISTIGNORE="fg:exit:popd:cd ..:cd ..:pwd:history:ls:la:[ ]\t*:??:cd:?:"
+export HISTIGNORE="fg:exit:popd:cd ..:pwd:history:ls:la:[ ]\t*:??:?:"
 export PROMPT_COMMAND="history -a"
 shopt -s histappend
 alias u='history -n'
@@ -49,6 +49,8 @@ alias pstat="python -mpstats"
 alias shm="cd /dev/shm"
 alias d='docker'
 alias dpidof="docker inspect --format {{.State.Pid}}"
+alias py=python
+
 
 # git-aware-prompt
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
@@ -56,12 +58,6 @@ source $GITAWAREPROMPT/main.sh
 PS1="\[\e[01;34m\]\u@\h\[\e[01;32m\] \w \$git_branch\[\e[01;31m\]\$git_dirty\[\e[0m\]> "
 
 # tmux settings 
-
-if [ -n "$TMUX" ]; then
-export TERM=screen-256color
-fi
-
-source ~/.dotfiles/preexec.bash
 
 precmd() {
     W=`whoami`@`hostname`:`pwd | sed -e"s#${HOME}#~#"`
@@ -73,6 +69,11 @@ preexec() {
     true
 }
 
-preexec_install
+if [ -n "$TMUX" ]; then
+    source ~/.dotfiles/preexec.bash
+    export TERM=screen-256color
+    preexec_install
+fi
 
+# system-local settings
 source ~/.bashrc.local
