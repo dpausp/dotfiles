@@ -55,6 +55,7 @@ au BufRead,BufNewFile *.j2* set filetype=htmljinja
 au BufRead,BufNewFile *.html.j2 set filetype=htmljinja
 au BufRead,BufNewFile *.j2.html set filetype=htmljinja
 au BufRead,BufNewFile *.sbt set filetype=scala
+au BufRead,BufNewFile *.nix set filetype=nix
 autocmd! BufRead,BufNewFile *.ics setfiletype icalendar
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
