@@ -44,11 +44,8 @@ autocmd Filetype htmljinja set ts=2 sts=2 sw=2
 autocmd Filetype scala set ts=2 sts=2 sw=2
 autocmd Filetype jade set ts=2 sts=2 sw=2
 autocmd Filetype ruby set ts=2 sts=2 sw=2
-autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 colorscheme elflord
-
-let g:pydiction_location = '~/.vim/pydiction-1.2/complete-dict'
 
 au BufRead,BufNewFile *.gradle  set filetype=groovy
 au BufRead,BufNewFile *.j2* set filetype=htmljinja
@@ -93,3 +90,7 @@ let g:miniBufExplUseSingleClick = 1
 
 " let the NERDTree ignore some file type (generated stuff and the like)
 let NERDTreeIgnore=['\.vim$', '\~$', '\.js$', '\.map$', '\.pyc$']
+
+
+"Jedi
+let g:jedi#popup_on_dot = 0
