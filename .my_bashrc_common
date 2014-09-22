@@ -1,5 +1,8 @@
 source ~/.keychain/${HOSTNAME}-sh > /dev/null
 
+source ~/.nix-profile/etc/profile.d/nix.sh
+
+
 export PATH=$PATH:~/.scripts/:~/progs/scala/bin:~/progs/bin:~/.local/bin/:~/node_modules/.bin:~/.cabal/bin
 export LC_MESSAGES=C
 export EDITOR=vim
