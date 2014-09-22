@@ -14,3 +14,6 @@ alias mts="cd $MTS_DIR"
 alias mt_db="sudo rm -rf /dev/shm/mysql && sudo tar xjf /home/stenzel/mediatum_dumps/mysql-current.tar.bz2 -C /dev/shm/ && sudo service mysql restart && tar xjf /home/stenzel/mediatum_dumps/mediatum_data-current.tar.bz2 -C /dev/shm/"
 
 alias mt_data="rm -rf /dev/shm/mediatum_data && tar xjf /home/stenzel/mediatum_dumps/mediatum_data-current.tar.bz2 -C /dev/shm/"
+
+export WORKON_HOME=~/coding/Venvs
+source ~/.local/bin/virtualenvwrapper.sh
