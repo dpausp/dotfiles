@@ -1,14 +1,13 @@
 #export YM_DIR=~/coding/tum/projAugustiner/yamoda_buildout/src/yamoda
 #export YMB_DIR=~/coding/tum/projAugustiner/yamoda_buildout
 export MT_DIR=~/coding/tum/mediatum
-export MTF_DIR=~/coding/tum/mediatum_atf
+export MTP_DIR=~/coding/tum/mediatum_postgres
 export MTS_DIR=~/coding/tum/mediatum-survey
 
 #alias ym="cd $YM_DIR"
 #alias ymb="cd $YMB_DIR"
 alias mt="cd $MT_DIR"
 alias mtp="cd $MTP_DIR"
-alias mtf="cd $MTF_DIR"
 alias mts="cd $MTS_DIR"
 
 alias mt_db="sudo rm -rf /dev/shm/mysql && sudo tar xjf /home/stenzel/mediatum_dumps/mysql-current.tar.bz2 -C /dev/shm/ && sudo service mysql restart && tar xjf /home/stenzel/mediatum_dumps/mediatum_data-current.tar.bz2 -C /dev/shm/"
