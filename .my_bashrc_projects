@@ -3,6 +3,10 @@
 export MT_DIR=~/coding/tum/mediatum
 export MTP_DIR=~/coding/tum/mediatum_postgres
 export MTS_DIR=~/coding/tum/mediatum-survey
+export TUM_DIR=~/coding/tum
+
+export MEDIATUM_PLUGIN_NAMES="tum armus spectral survey scholar arsearchbox pytsm pb oauth dynauth"
+export MEDIATUM_PLUGIN_DIR=$TUM_DIR/plugins_mediatum
 
 #alias ym="cd $YM_DIR"
 #alias ymb="cd $YMB_DIR"
