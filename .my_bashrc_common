@@ -12,7 +12,7 @@ export GIT_SSH="/usr/bin/ssh"
 # bash settings
 export HISTFILESIZE=20000
 export HISTSIZE=20000
-export HISTIGNORE="fg:exit:popd:cd ..:pwd:history:ls:la:[ ]\t*:??:?:"
+export HISTIGNORE="fg:exit:popd::pwd:history:ls:la:[ ]\t*:??:?:"
 export PROMPT_COMMAND="history -a"
 shopt -s histappend
 alias u='history -n'
@@ -26,8 +26,20 @@ alias gitc="git commit"
 alias gits="git status"
 alias gitb="git bisect"
 alias gitp="git push"
+alias gmv="git move"
+alias grm="git rm"
 
 alias gitaww="git diff -w --no-color | git apply --cached --ignore-whitespace" # add changes, ignore whitespace
+
+
+### git annex
+
+alias amv="git annex move"
+alias adrop="git annex drop"
+alias acp="git annex copy"
+alias async="git annex sync"
+alias aget="git annex get"
+alias awhereis="git annex whereis"
 
 
 alias mv='mv -i'
