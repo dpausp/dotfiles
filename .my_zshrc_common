@@ -1,0 +1,52 @@
+source ~/.keychain/`hostname`-sh > /dev/null
+
+source ~/.nix-profile/etc/profile.d/nix.sh
+
+export PATH=$PATH:~/.scripts/:~/progs/scala/bin:~/progs/bin:~/.local/bin/:~/node_modules/.bin:~/.cabal/bin
+export LC_MESSAGES=C
+export EDITOR=vim
+export GIT_PAGER="vim -R -"
+export GIT_SSH="/usr/bin/ssh"
+
+alias pcwd="source ~/.scripts/pcwd"
+alias gita="git add"
+alias gitd="git diff"
+alias gitdc="git diff --cached"
+alias gitl="git log"
+alias gitc="git commit"
+alias gits="git status"
+alias gitb="git bisect"
+alias gitp="git push"
+alias gmv="git move"
+alias grm="git rm"
+
+alias gitaww="git diff -w --no-color | git apply --cached --ignore-whitespace" # add changes, ignore whitespace
+
+
+### git annex
+
+alias add="git annex add"
+alias amv="git annex move"
+alias adrop="git annex drop"
+alias acp="git annex copy"
+alias async="git annex sync"
+alias aget="git annex get"
+alias awhereis="git annex whereis"
+
+### other 
+
+alias dum='du -m --max-depth=1'
+alias sl='ls --color'
+alias sd="cd /usr/src"
+alias tz="tar xzf"
+alias tj="tar xjf"
+alias rs="rsync -a --stats --rsh='ssh -p 35'"
+alias rsl="rsync -a --stats --rsh='ssh -p 35 -oNoneEnabled=yes -oNoneSwitch=yes -oHPNBufferSize=8192 -v'"
+alias rsn="rsync -a --stats --rsh='ssh -p 22'"
+alias m="mount"
+alias pstat="python -mpstats"
+alias shm="cd /dev/shm"
+alias dk='docker'
+alias dpidof="docker inspect --format {{.State.Pid}}"
+alias py=python
+alias ll="ls -laL"

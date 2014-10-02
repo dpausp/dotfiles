@@ -1,0 +1,8 @@
+alias acs="sudo apt-cache search"
+alias agi="sudo apt-get install"
+alias sap="sudo aptitude"
+alias saps="sudo aptitude search"
+alias sapi="sudo aptitude -P install"
+alias sapr="sudo aptitude -P remove"
+alias sapu="sudo aptitude update && sudo aptitude -P safe-upgrade"
+alias svi="sudo -E vi"

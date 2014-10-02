@@ -1,0 +1,16 @@
+export MT_DIR=~/coding/tum/mediatum
+export MTP_DIR=~/coding/tum/mediatum_postgres
+export MTS_DIR=~/coding/tum/mediatum-survey
+export TUM_DIR=~/coding/tum
+
+export MEDIATUM_PLUGIN_NAMES="tum armus spectral survey scholar arsearchbox pytsm pb oauth dynauth"
+export MEDIATUM_PLUGIN_DIR=$TUM_DIR/plugins_mediatum
+
+alias mt="cd $MT_DIR"
+alias mtp="cd $MTP_DIR"
+alias mts="cd $MTS_DIR"
+
+alias mt_data="rm -rf /dev/shm/mediatum_data && tar xjf /home/stenzel/mediatum_dumps/mediatum_data-current.tar.bz2 -C /dev/shm/"
+
+export WORKON_HOME=~/coding/Venvs
+source ~/.local/bin/virtualenvwrapper.sh
