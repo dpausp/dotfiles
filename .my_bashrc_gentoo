@@ -1,2 +1,0 @@
-alias se="xhost + && kdesu -u s konsole"
-export PATH=/home/tobixx0/.local/bin:$PATH
