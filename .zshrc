@@ -17,7 +17,7 @@ ZSH_THEME="dstufft"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=7
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -81,7 +81,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-if [ -f ~/.dotfiles/.my_bashrc_projects ]; then
+if [ -f ~/.dotfiles/.my_zshrc_projects ]; then
     . ~/.dotfiles/.my_zshrc_projects
 fi
 
