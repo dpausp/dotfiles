@@ -25,7 +25,6 @@ set mouse=a
 set nospell
 set spelllang=de
 set ls=2
-set autochdir
 set backupdir=~/.vim/sessions
 set dir=~/.vim/sessions
 set title
@@ -74,6 +73,8 @@ map <leader>d <Plug>Kwbd<CR>
 map <C-A> "_ddP
 map <C-F><C-F> :%s/\| {%/-/g\|:%s/%}//g<CR>
 
+map <F7> :Ack <CR>
+
 nmap gt :bn<CR>
 nmap gT :bp<CR>
 nmap g0 :bfirst<CR>
@@ -94,3 +95,25 @@ let NERDTreeIgnore=['\.vim$', '\~$', '\.js$', '\.map$', '\.pyc$']
 
 "Jedi
 let g:jedi#popup_on_dot = 0
+
+
+let g:ack_default_options= " -s --nocolor --nogroup --column"
+
+
+let g:unite_yarm_server_url = 'http://localhost:3000'
+let g:unite_yarm_access_key  = '012cb36858fed5b1637f913677c9362eaf71f128'
+
+
+"Unite
+let g:unite_source_grep_command = "ag"
+let g:unite_source_grep_default_opts = "--nogroup --nocolor --column"
+let g:unite_source_history_yank_enable = 1
+let g:unite_winheight = 50
+let g:unite_previewheight = 60
+nmap <space> [unite]
+nnoremap [unite]/ :Unite grep:.<cr>
+nnoremap [unite]y :Unite history/yank<cr>
+nnoremap [unite]s :Unite -quick-match buffer<cr>
+nnoremap [unite]f :Unite file_rec -start-insert<cr>
+nnoremap [unite]u :Unite 
+nnoremap [unite]o :Unite -no-split -start-insert -auto-preview outline<cr>
