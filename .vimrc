@@ -88,7 +88,7 @@ let g:miniBufExplUseSingleClick = 1
 " The upshot of this should be that if you go into MBE and select
 " a buffer, the buffer should not show up in a window that is
 " hosting an explorer.
- let g:miniBufExplModSelTarget = 1
+let g:miniBufExplModSelTarget = 1
 
 " let the NERDTree ignore some file type (generated stuff and the like)
 let NERDTreeIgnore=['\.vim$', '\~$', '\.js$', '\.map$', '\.pyc$']
@@ -96,7 +96,6 @@ let NERDTreeIgnore=['\.vim$', '\~$', '\.js$', '\.map$', '\.pyc$']
 
 "Jedi
 let g:jedi#popup_on_dot = 0
-
 
 let g:ack_default_options= " -s --nocolor --nogroup --column"
 
@@ -117,3 +116,10 @@ nnoremap [unite]s :Unite -no-split -quick-match buffer<cr>
 nnoremap [unite]f :Unite -no-split file_rec -start-insert<cr>
 nnoremap [unite]u :Unite 
 nnoremap [unite]o :Unite -no-split -start-insert -auto-preview outline<cr>
+
+"vim-pandoc
+let g:pandoc#folding#fdc = 0
+
+"pandoc commands
+
+:command -nargs=+ Pd %!pandoc --no-wrap <args> -
