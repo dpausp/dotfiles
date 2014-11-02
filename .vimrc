@@ -43,6 +43,7 @@ autocmd Filetype htmljinja set ts=2 sts=2 sw=2
 autocmd Filetype scala set ts=2 sts=2 sw=2
 autocmd Filetype jade set ts=2 sts=2 sw=2
 autocmd Filetype ruby set ts=2 sts=2 sw=2
+autocmd Filetype python set ts=4 sts=4 sw=4
 
 colorscheme elflord
 
@@ -108,12 +109,11 @@ let g:unite_yarm_access_key  = '012cb36858fed5b1637f913677c9362eaf71f128'
 let g:unite_source_grep_command = "ag"
 let g:unite_source_grep_default_opts = "--nogroup --nocolor --column"
 let g:unite_source_history_yank_enable = 1
-let g:unite_winheight = 50
-let g:unite_previewheight = 60
+"let g:unite_winheight = 30
 nmap <space> [unite]
-nnoremap [unite]/ :Unite grep:.<cr>
-nnoremap [unite]y :Unite history/yank<cr>
-nnoremap [unite]s :Unite -quick-match buffer<cr>
-nnoremap [unite]f :Unite file_rec -start-insert<cr>
+nnoremap [unite]/ :Unite -no-split grep:.<cr>
+nnoremap [unite]y :Unite -no-split history/yank<cr>
+nnoremap [unite]s :Unite -no-split -quick-match buffer<cr>
+nnoremap [unite]f :Unite -no-split file_rec -start-insert<cr>
 nnoremap [unite]u :Unite 
 nnoremap [unite]o :Unite -no-split -start-insert -auto-preview outline<cr>
