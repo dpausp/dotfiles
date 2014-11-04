@@ -123,3 +123,10 @@ let g:pandoc#folding#fdc = 0
 "pandoc commands
 
 :command -nargs=+ Pd %!pandoc --no-wrap <args> -
+
+
+"neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#disable_auto_complete = 1
+imap <expr><C-Space>        neocomplete#start_manual_complete()
+imap <C-@> <C-Space>
