@@ -5,6 +5,7 @@ ln -sf .dotfiles/.bash .
 ln -sf .dotfiles/.tmux.conf .
 ln -sf .dotfiles/.scripts .
 ln -sf .dotfiles/.zshrc .
+ln -sf .dotfiles/.gitconfig .
 
 if [ "$1" == "vdr" ]; then
     ln -sf .dotfiles/.vimrc .vimrc

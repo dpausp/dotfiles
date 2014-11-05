@@ -1,0 +1,20 @@
+[user]
+	email = tobias.stenzel@tum.de
+[alias]
+    co = checkout
+    re = rebase
+    me = merge
+[push] 
+    default = simple
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[merge]
+    tool = vimdiff
+[color]
+    ui = false
+    status = true
+    pull = true
+    fetch = true
+    push = true
