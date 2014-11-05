@@ -118,6 +118,7 @@ nnoremap [unite]s :Unite -no-split -quick-match buffer<cr>
 nnoremap [unite]f :Unite -no-split file_rec -start-insert<cr>
 nnoremap [unite]u :Unite 
 nnoremap [unite]o :Unite -no-split -start-insert -auto-preview outline<cr>
+nnoremap [unite]m :Unite -no-split -start-insert file_mru<cr>
 
 "vim-pandoc
 let g:pandoc#folding#fdc = 0
