@@ -72,12 +72,14 @@ set pastetoggle=<C-T><C-T>
 map <C-P><C-P> :set number mouse=a <CR>
 map <C-P><C-O> :set nonumber mouse-=a <CR>
 map <C-P><C-D> "=strftime("%d.%m.%Y")<CR>P
+map <C-T><C-A> :set filetype=ansible <CR>
 map <C-T><C-H> :set filetype=htmljinja <CR>
 map <C-T><C-I> :set filetype=jinja <CR>
 map <C-T><C-K> :set filetype=coffee <CR>
 map <C-T><C-P> :set filetype=python <CR>
 map <C-T><C-J> :set filetype=jade <CR>
 map <C-T><C-M> :set filetype=markdown <CR>
+map <C-T><C-Y> :set filetype=yaml <CR>
 map <F10> :w <CR> :make <CR>
 map <F3> :NERDTreeToggle<CR>
 map <leader>d <Plug>Kwbd<CR>
@@ -114,7 +116,7 @@ let g:unite_winheight = 50
 nmap <space> [unite]
 nnoremap [unite]/ :Unite -no-split -auto-preview grep:.<cr>
 nnoremap [unite]y :Unite -no-split history/yank<cr>
-nnoremap [unite]s :Unite -no-split -quick-match buffer<cr>
+nnoremap [unite]s :Unite -no-split -start-insert buffer<cr>
 nnoremap [unite]f :Unite -no-split file_rec -start-insert<cr>
 nnoremap [unite]u :Unite 
 nnoremap [unite]o :Unite -no-split -start-insert -auto-preview outline<cr>
