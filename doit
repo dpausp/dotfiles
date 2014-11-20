@@ -1,0 +1,6 @@
+#!/bin/sh
+git clone https://github.com/dpausp/dotfiles .dotfiles
+curl -L http://install.ohmyz.sh | sh
+.dotfiles/create_links $1
+cd .dotfiles
+git submodule init
