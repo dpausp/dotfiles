@@ -1,4 +1,4 @@
-export PATH="/home/stenzel/coding/ansible/ansible/bin:/home/stenzel/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/stenzel/.rvm/bin:/home/stenzel/.scripts/:/home/stenzel/progs/scala/bin:/home/stenzel/progs/bin:/home/stenzel/.local/bin/:/home/stenzel/node_modules/.bin:/home/stenzel/.cabal/bin:/home/stenzel/.gem/ruby/1.9.1/bin:/home/stenzel/.rvm/bin"
+export PATH="/home/stenzel/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/stenzel/.rvm/bin:/home/stenzel/.scripts/:/home/stenzel/progs/scala/bin:/home/stenzel/progs/bin:/home/stenzel/.local/bin/:/home/stenzel/node_modules/.bin:/home/stenzel/.cabal/bin:/home/stenzel/.gem/ruby/1.9.1/bin:/home/stenzel/.rvm/bin"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh

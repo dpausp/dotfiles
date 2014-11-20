@@ -35,6 +35,11 @@ export GIT_PAGER="vim -R -"
 export GIT_SSH="/usr/bin/ssh"
 
 
+### remove default aliases
+
+unalias ag
+unalias d
+
 ### aliases
 
 alias pcwd="source ~/.scripts/pcwd"
@@ -62,6 +67,14 @@ alias async="git annex sync"
 alias aget="git annex get"
 alias awhereis="git annex whereis"
 
+
+### docker
+
+alias d='docker'
+alias dpidof="docker inspect --format {{.State.Pid}}"
+alias -g TMUX="script /dev/null -c 'TERM=xterm bash -ilc tmux -2'"
+alias dex="docker exec -it"
+
 ### other 
 
 alias dum='du -m --max-depth=1'
@@ -75,8 +88,6 @@ alias rsn="rsync -a --stats --rsh='ssh -p 22'"
 alias m="mount"
 alias pstat="python -mpstats"
 alias shm="cd /dev/shm"
-alias dk='docker'
-alias dpidof="docker inspect --format {{.State.Pid}}"
 alias py=python
 alias ll="ls -laL"
 
