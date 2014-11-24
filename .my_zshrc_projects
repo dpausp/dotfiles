@@ -13,4 +13,4 @@ alias mts="cd $MTS_DIR"
 alias mt_data="rm -rf /dev/shm/mediatum_data && tar xjf /home/stenzel/mediatum_dumps/mediatum_data-current.tar.bz2 -C /dev/shm/"
 
 export WORKON_HOME=~/coding/Venvs
-source ~/.local/bin/virtualenvwrapper.sh
+source ~/.local/bin/virtualenvwrapper.sh 2> /dev/null

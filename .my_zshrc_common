@@ -1,7 +1,4 @@
-source ~/.keychain/`hostname`-sh > /dev/null
-
-source ~/.nix-profile/etc/profile.d/nix.sh
-
+source ~/.keychain/`hostname`-sh &> /dev/null
 
 ### zsh settings
 
