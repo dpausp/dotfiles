@@ -124,6 +124,7 @@ nnoremap [unite]m :Unite -no-split -start-insert file_mru<cr>
 
 "vim-pandoc
 let g:pandoc#folding#fdc = 0
+let g:pandoc#spell#enabled = 0
 
 "pandoc commands
 
@@ -135,3 +136,17 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#disable_auto_complete = 1
 imap <expr><C-Space>        neocomplete#start_manual_complete()
 imap <C-@> <C-Space>
+
+"nimrod.vim
+
+fun! JumpToDef()
+  if exists("*GotoDefinition_" . &filetype)
+    call GotoDefinition_{&filetype}()
+  else
+    exe "norm! \<C-]>"
+  endif
+endf
+
+" Jump to tag
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i
