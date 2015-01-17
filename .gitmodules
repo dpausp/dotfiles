@@ -91,3 +91,6 @@
 [submodule ".vim/bundle/nimrod.vim"]
 	path = .vim/bundle/nimrod.vim
 	url = git://github.com/zah/nimrod.vim.git
+[submodule ".vim/bundle/vimpreviewpandoc"]
+	path = .vim/bundle/vimpreviewpandoc
+	url = https://github.com/tex/vimpreviewpandoc
