@@ -80,14 +80,18 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-if [ -f ~/.dotfiles/.my_zshrc_projects ]; then
-    . ~/.dotfiles/.my_zshrc_projects
+if [ -f ~/.my_zshrc_projects ]; then
+    . ~/.my_zshrc_projects
 fi
 
-if [ -f ~/.dotfiles/.my_zshrc_debian ]; then
-    . ~/.dotfiles/.my_zshrc_debian
+if [ -f ~/.my_zshrc_debian ]; then
+    . ~/.my_zshrc_debian
 fi
 
-if [ -f ~/.dotfiles/.my_zshrc_common ]; then
-    . ~/.dotfiles/.my_zshrc_common
+if [ -f ~/.my_zshrc_gentoo ]; then
+    . ~/.my_zshrc_gentoo
+fi
+
+if [ -f ~/.my_zshrc_common ]; then
+    . ~/.my_zshrc_common
 fi

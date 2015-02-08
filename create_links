@@ -7,16 +7,19 @@ ln -sf .dotfiles/.scripts .
 ln -sf .dotfiles/.zshrc .
 ln -sf .dotfiles/.zshenv .
 ln -sf .dotfiles/.gitconfig .
+ln -sf .dotfiles/.my_zshrc_gentoo .my_zshrc_gentoo
 
-if [ "$1" == "vdr" ]; then
+if [ "$1" == "gentoo" ]; then
     ln -sf .dotfiles/.vimrc .vimrc
     ln -sf .dotfiles/.vim .vim
     ln -sf .dotfiles/.tmux .tmux
+    ln -sf .dotfiles/.my_zshrc_gentoo .my_zshrc_gentoo
 elif [ "$1" == "debian" ]; then
     ln -sf .dotfiles/.inputrc_debian .inputrc
     ln -sf .dotfiles/.vimrc .vimrc
     ln -sf .dotfiles/.vim .vim
     ln -sf .dotfiles/.tmux .tmux
+    ln -sf .dotfiles/.my_zshrc_debian .my_zshrc_debian
 else
     echo "unknown?!"
 fi
