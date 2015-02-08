@@ -19,18 +19,28 @@ bindkey -M viins "^[[F" vi-end-of-line
 bindkey -M vicmd "^[[H" vi-beginning-of-line
 bindkey -M vicmd "^[[F" vi-end-of-line
 
-bindkey -M viins '\e.' insert-last-word
-bindkey -M vicmd '\e.' insert-last-word
+bindkey -M viins '^[.' insert-last-word
+bindkey -M vicmd '^[.' insert-last-word
+
+
+bindkey -M viins '^[^?' backward-kill-word # Alt-Backspace
+
 
 export KEYTIMEOUT=2
 
+bindkey -M vicmd '\ef'   forward-word                      # Alt-f
+bindkey -M vicmd '\eb'   backward-word                     # Alt-b
+bindkey -M vicmd '\ed'   kill-word         # Alt-d                    
+
+bindkey -M viins '\ef'   forward-word      # Alt-f
+bindkey -M viins '\eb'   backward-word     # Alt-b
+bindkey -M viins '\ed'   kill-word         # Alt-d                    
 
 export PATH=$PATH:~/.scripts/:~/progs/scala/bin:~/progs/bin:~/.local/bin/:~/node_modules/.bin:~/.cabal/bin
 export LC_MESSAGES=C
 export EDITOR=vim
 export GIT_PAGER="vim -R -"
 export GIT_SSH="/usr/bin/ssh"
-
 
 ### remove default aliases
 
@@ -53,6 +63,7 @@ alias grm="git rm"
 
 alias gitaww="git diff -w --no-color | git apply --cached --ignore-whitespace" # add changes, ignore whitespace
 
+alias newest_file="ls -1t | head -n1"
 
 ### git annex
 
