@@ -7,14 +7,14 @@ ln -sf .dotfiles/.scripts .
 ln -sf .dotfiles/.zshrc .
 ln -sf .dotfiles/.zshenv .
 ln -sf .dotfiles/.gitconfig .
-ln -sf .dotfiles/.my_zshrc_gentoo .my_zshrc_gentoo
+ln -sf .dotfiles/.my_zshrc_common .my_zshrc_common
 
-if [ "$1" == "gentoo" ]; then
+if [ "$1" = "gentoo" ]; then
     ln -sf .dotfiles/.vimrc .vimrc
     ln -sf .dotfiles/.vim .vim
     ln -sf .dotfiles/.tmux .tmux
     ln -sf .dotfiles/.my_zshrc_gentoo .my_zshrc_gentoo
-elif [ "$1" == "debian" ]; then
+elif [ "$1" = "debian" ]; then
     ln -sf .dotfiles/.inputrc_debian .inputrc
     ln -sf .dotfiles/.vimrc .vimrc
     ln -sf .dotfiles/.vim .vim
