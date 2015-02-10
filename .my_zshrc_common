@@ -60,6 +60,7 @@ alias gitb="git bisect"
 alias gitp="git push"
 alias gmv="git move"
 alias grm="git rm"
+alias gms="git merge --squash"
 
 alias gitaww="git diff -w --no-color | git apply --cached --ignore-whitespace" # add changes, ignore whitespace
 
