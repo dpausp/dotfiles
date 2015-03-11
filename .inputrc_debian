@@ -67,7 +67,9 @@ $endif
 
 set editing-mode vi
 set keymap vi-command
+"\e[A": history-search-backward
+"\e[B": history-search-forward
 
-# alternate mappings for "page up" and "page down" to search the history
-"\e[5~": history-search-backward
-"\e[6~": history-search-forward
+set keymap vi-insert
+"\e[A": history-search-backward
+"\e[B": history-search-forward
