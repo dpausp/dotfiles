@@ -56,6 +56,9 @@ autocmd Filetype nix set ts=2 sts=2 sw=2
 
 colorscheme elflord
 
+au BufRead,BufNewFile *.md  set filetype=markdown
+au BufRead,BufNewFile *.mdown  set filetype=markdown
+au BufRead,BufNewFile *.markdown  set filetype=markdown
 au BufRead,BufNewFile *.gradle  set filetype=groovy
 au BufRead,BufNewFile *.j2* set filetype=htmljinja
 au BufRead,BufNewFile *.html.j2 set filetype=htmljinja
@@ -127,6 +130,7 @@ nnoremap [unite]m :Unite -no-split -start-insert file_mru<cr>
 "vim-pandoc
 let g:pandoc#folding#fdc = 0
 let g:pandoc#spell#enabled = 0
+let g:pandoc#filetypes#pandoc_markdown = 0
 
 "pandoc commands
 
