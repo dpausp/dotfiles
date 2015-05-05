@@ -1,2 +1,2 @@
-#!/bin/sh
+#!/bin/zsh
 docker exec -it $1 sh -ic /bin/zsh

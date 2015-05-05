@@ -4,7 +4,7 @@ call pathogen#infect()
 "inoremap <Nul> <C-x><C-n>
 
 
-
+set hidden
 set incsearch
 set tabstop=4
 set shiftwidth=4
