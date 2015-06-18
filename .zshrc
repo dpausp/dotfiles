@@ -92,6 +92,10 @@ if [ -f ~/.my_zshrc_gentoo ]; then
     . ~/.my_zshrc_gentoo
 fi
 
+if [ -f ~/.my_zshrc_nixos ]; then
+    . ~/.my_zshrc_nixos
+fi
+
 if [ -f ~/.my_zshrc_common ]; then
     . ~/.my_zshrc_common
 fi
