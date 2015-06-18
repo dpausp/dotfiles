@@ -90,6 +90,8 @@ map <F3> :NERDTreeToggle<CR>
 map <leader>d <Plug>Kwbd<CR>
 map <C-A> "_ddP
 map <C-F><C-F> :%s/\| {%/-/g\|:%s/%}//g<CR>
+map <C-P><C-F> :%!sqlformat.py <CR>
+
 
 map <F7> :Ack <CR>
 
