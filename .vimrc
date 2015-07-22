@@ -3,8 +3,6 @@ set nocompatible
 call pathogen#infect()
 "inoremap <Nul> <C-x><C-n>
 
-
-set hidden
 set incsearch
 set tabstop=4
 set shiftwidth=4
@@ -36,11 +34,11 @@ set hlsearch
 set textwidth=0
 set history=1000
 set undolevels=1000
+set hidden
 
 syntax on
 
 filetype plugin indent on
-
 
 
 autocmd Filetype html set ts=2 sts=2 sw=2
@@ -90,8 +88,6 @@ map <F3> :NERDTreeToggle<CR>
 map <leader>d <Plug>Kwbd<CR>
 map <C-A> "_ddP
 map <C-F><C-F> :%s/\| {%/-/g\|:%s/%}//g<CR>
-map <C-P><C-F> :%!sqlformat.py <CR>
-
 
 map <F7> :Ack <CR>
 
@@ -109,7 +105,7 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 
 " NERDTree
 " let the NERDTree ignore some file type (generated stuff and the like)
-let NERDTreeIgnore=['\.vim$', '\~$', '\.js$', '\.map$', '\.pyc$']
+let NERDTreeIgnore=['\.vim$', '\~$', '\.gen.js$', '\.map$', '\.pyc$']
 
 
 "Jedi
@@ -117,7 +113,7 @@ let g:jedi#popup_on_dot = 0
 
 "Unite
 let g:unite_source_grep_command = "ag"
-let g:unite_source_grep_default_opts = "--nogroup --nocolor --column"
+let g:unite_source_grep_default_opts = "--nocolor"
 let g:unite_source_history_yank_enable = 1
 let g:unite_winheight = 50
 nmap <space> [unite]
