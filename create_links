@@ -20,6 +20,7 @@ elif [ "$1" = "debian" ]; then
 elif [ "$1" = "nixos" ]; then
     ln -sf .dotfiles/.zshenv_nixos .zshenv
     ln -sf .dotfiles/.my_zshrc_nixos .my_zshrc_nixos
+    ln -sf .dotfiles/.nixpkgs .nixpkgs
 else
     echo "unknown?!"
 fi
