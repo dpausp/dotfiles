@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+docker run -it --rm -v ~/docker/gentoo/portage:/usr/portage gentoo emerge "$@"
