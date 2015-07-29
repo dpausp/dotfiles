@@ -1,26 +1,26 @@
 #!/usr/bin/env zsh
 
-ln -sf .dotfiles/.gtkrc-2.0.mine .gtkrc-2.0.mine
-ln -sf .dotfiles/.tmux.conf .tmux.conf
-ln -sf .dotfiles/.scripts .scripts
-ln -sf .dotfiles/.zshrc .zshrc
-ln -sf .dotfiles/.gitconfig .gitconfig
-ln -sf .dotfiles/.my_zshrc_common .my_zshrc_common
-ln -sf .dotfiles/.vimrc .vimrc
-ln -sf .dotfiles/.vim .vim
-ln -sf .dotfiles/.tmux .tmux
+ln -sf .dotfiles/.gtkrc-2.0.mine
+ln -sf .dotfiles/.tmux.conf
+ln -sf .dotfiles/.scripts
+ln -sf .dotfiles/.zshrc
+ln -sf .dotfiles/.gitconfig
+ln -sf .dotfiles/.my_zshrc_common
+ln -sf .dotfiles/.vimrc
+ln -sf .dotfiles/.vim
+ln -sf .dotfiles/.tmux
 
 if [ "$1" = "gentoo" ]; then
-    ln -sf .dotfiles/.zshenv .
-    ln -sf .dotfiles/.my_zshrc_gentoo .my_zshrc_gentoo
+    ln -sf .dotfiles/.zshenv
+    ln -sf .dotfiles/.my_zshrc_gentoo
 elif [ "$1" = "debian" ]; then
-    ln -sf .dotfiles/.zshenv .
+    ln -sf .dotfiles/.zshenv
+    ln -sf .dotfiles/.my_zshrc_debian
     ln -sf .dotfiles/.inputrc_debian .inputrc
-    ln -sf .dotfiles/.my_zshrc_debian .my_zshrc_debian
 elif [ "$1" = "nixos" ]; then
+    ln -sf .dotfiles/.my_zshrc_nixos
+    ln -sf .dotfiles/.nixpkgs
     ln -sf .dotfiles/.zshenv_nixos .zshenv
-    ln -sf .dotfiles/.my_zshrc_nixos .my_zshrc_nixos
-    ln -sf .dotfiles/.nixpkgs .nixpkgs
 else
     echo "unknown?!"
 fi
