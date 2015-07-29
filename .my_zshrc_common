@@ -40,16 +40,15 @@ export PATH=$PATH:~/.scripts/:~/progs/scala/bin:~/progs/bin:~/.local/bin/:~/node
 export LC_MESSAGES=C
 export EDITOR=vim
 export GIT_PAGER="vim -R -"
-export GIT_SSH="/usr/bin/ssh"
 
 ### remove default aliases
 
-unalias ag
 unalias d
 
 ### aliases
 
-alias pcwd="source ~/.scripts/pcwd"
+### git
+
 alias gita="git add"
 alias gitd="git diff"
 alias gitdc="git diff --cached"
@@ -63,8 +62,6 @@ alias grm="git rm"
 alias gms="git merge --squash"
 
 alias gitaww="git diff -w --no-color | git apply --cached --ignore-whitespace" # add changes, ignore whitespace
-
-alias newest_file="ls -1t | head -n1"
 
 ### git annex
 
@@ -86,6 +83,8 @@ alias dex="docker exec -it"
 
 ### other 
 
+alias pcwd="source ~/.scripts/pcwd"
+alias newest_file="ls -1t | head -n1"
 alias dum='du -m --max-depth=1'
 alias sl='ls --color'
 alias sd="cd /usr/src"

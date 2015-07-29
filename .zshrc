@@ -5,7 +5,6 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="candy"
 ZSH_THEME="dpausp"
 
 
@@ -47,7 +46,8 @@ export UPDATE_ZSH_DAYS=7
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git virtualenvwrapper docker virtualenv pip common-aliases debian dirhistory git-annex git-extras tmux urltools vi-mode zsh-syntax-highlighting opp)  
+
+plugins=(git virtualenvwrapper docker pip common-aliases dirhistory git-annex git-extras tmux urltools vi-mode zsh-syntax-highlighting opp)  
 
 source $ZSH/oh-my-zsh.sh
 
@@ -79,10 +79,18 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
+
+### my distribution-independent config
+
+if [ -f ~/.my_zshrc_common ]; then
+    . ~/.my_zshrc_common
+fi
+
 if [ -f ~/.my_zshrc_projects ]; then
     . ~/.my_zshrc_projects
 fi
+
+### my distribution-dependent config
 
 if [ -f ~/.my_zshrc_debian ]; then
     . ~/.my_zshrc_debian
@@ -96,6 +104,3 @@ if [ -f ~/.my_zshrc_nixos ]; then
     . ~/.my_zshrc_nixos
 fi
 
-if [ -f ~/.my_zshrc_common ]; then
-    . ~/.my_zshrc_common
-fi

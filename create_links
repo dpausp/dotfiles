@@ -18,7 +18,7 @@ elif [ "$1" = "debian" ]; then
     ln -sf .dotfiles/.inputrc_debian .inputrc
     ln -sf .dotfiles/.my_zshrc_debian .my_zshrc_debian
 elif [ "$1" = "nixos" ]; then
-    ln -sf .dotfiles/.zshenv_nixos .
+    ln -sf .dotfiles/.zshenv_nixos .zshenv
     ln -sf .dotfiles/.my_zshrc_nixos .my_zshrc_nixos
 else
     echo "unknown?!"
