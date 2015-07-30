@@ -29,6 +29,7 @@ pkgs: {
           sharutils
           openssl
           openssh
+          silver-searcher
         ];
       };
 
@@ -43,8 +44,8 @@ pkgs: {
           thunderbird
           vlc
           libreoffice
-          silver-searcher
           youtube-dl
+          kde4.okular
         ];
       };
       
