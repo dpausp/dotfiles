@@ -1,2 +1,1 @@
 alias vi=vim
-alias nish="nix-shell --command zsh"

@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+command=${@:-zsh}
+echo "Running $command in nix-shell..."
+nix-shell --command "$command"
