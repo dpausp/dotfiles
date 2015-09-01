@@ -1,0 +1,41 @@
+#!/usr/bin/env ipython
+from __future__ import print_function
+import time
+import sys
+import git
+
+### USERS
+
+REMOTE = "darrohn"
+RETURN_BRANCH = "master"
+
+### /CONFIG
+
+def filter_branches_by_names(branches, branch_names):
+    return [br for br in branches if br.name in branch_names]
+
+repo = git.Repo(".")
+
+if len(sys.argv) == 1:
+    branch_names = [repo.active_branch.name]
+else:
+    branch_names = sys.argv[1:]
+
+    print("finishing branches " + " ".join(branch_names) + ", sleeping 4s...")
+    time.sleep(1)
+
+return_branch = repo.branches[RETURN_BRANCH]
+remote = repo.remotes[REMOTE]
+
+for branch_name in branch_names:
+    branch = repo.branches[branch_name]
+    tag_name = "branch_" + branch_name
+    print("=" * 80)
+    print("creating backup tag " + tag_name)
+    branch.checkout()
+    tag = repo.create_tag(tag_name)
+    remote.push(tag)
+    remote.push(":" + branch_name)
+    return_branch.checkout()
+    repo.delete_head(branch, force=True)
+    print("branch {} deleted locally and on remote {}".format(branch_name, REMOTE))
