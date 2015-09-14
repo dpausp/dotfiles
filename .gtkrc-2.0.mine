@@ -40,3 +40,8 @@ class "GtkToolbar"                  style "compact-toolbar"
 widget_class "*<GtkToolbar>*<GtkButton>"    style "compact-button"
 class "GtkWidget" style "gtkcompact"
 
+binding "NoKeyboardNavigation" {
+            unbind "F10"
+}
+
+class * binding "NoKeyboardNavigation"
