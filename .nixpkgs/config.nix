@@ -53,7 +53,7 @@ pkgs: {
         name = "dev";
         paths = [
           pgadmin
-          eclipses.eclipse_cpp_44
+          eclipses.eclipse_cpp_45
           python27Packages.pip
           python27Packages.virtualenv
           python27Packages.virtualenvwrapper
