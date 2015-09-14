@@ -47,7 +47,7 @@ export UPDATE_ZSH_DAYS=7
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git virtualenvwrapper docker pip common-aliases dirhistory git-annex git-extras tmux urltools vi-mode zsh-syntax-highlighting opp)  
+plugins=(git docker pip common-aliases dirhistory git-annex git-extras tmux urltools vi-mode zsh-syntax-highlighting opp)  
 
 source $ZSH/oh-my-zsh.sh
 
