@@ -1,6 +1,8 @@
-#!/bin/sh
+#!/bin/zsh
 git clone https://github.com/dpausp/dotfiles .dotfiles
-curl -L http://install.ohmyz.sh | sh
+.dotfiles/install-ohmyz
+rm -f .zshrc
 .dotfiles/create_links $1
 cd .dotfiles
 git submodule init
+git submodule update
