@@ -1,1 +1,2 @@
 alias vi=vim
+alias ctl="systemctl --user"
