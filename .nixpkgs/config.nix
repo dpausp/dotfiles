@@ -10,6 +10,10 @@ pkgs: {
     packageOverrides = pkgs : with pkgs;
     rec {
       vim_configurable = vimUtils.makeCustomizable (pkgs.vim_configurable.override {
+         flags = ["python"];
+      });
+      
+      vim_configurable_nox = vimUtils.makeCustomizable (pkgs.vim_configurable.override {
          libX11 = null;
          libXext = null;
          libSM = null; 
@@ -23,11 +27,10 @@ pkgs: {
          gui = "no";
          flags = ["python"];
       });
-      
+    
       common = with pkgs; buildEnv {
         name = "common";
         paths = [
-          vim_configurable
           python
           gnupg
           keychain
