@@ -2,6 +2,11 @@ pkgs: {
     vim = { netbeans = false;
             tcl = false;
           };
+
+    firefox = {
+      icedtea = true;
+    };
+          
     packageOverrides = pkgs : with pkgs;
     rec {
       vim_configurable = vimUtils.makeCustomizable (pkgs.vim_configurable.override {
@@ -36,14 +41,14 @@ pkgs: {
       desktop = with pkgs; buildEnv {
         name = "desktop";
         paths = [
+          vim_configurable
           kde4.kde_gtk_config
           kde4.kwalletmanager
           gtk_engines
           gajim
-          firefox
+          firefox-wrapper
           thunderbird
           vlc
-          libreoffice
           youtube-dl
           kde4.okular
         ];
