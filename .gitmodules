@@ -96,4 +96,4 @@
 	url = https://github.com/tex/vimpreviewpandoc
 [submodule ".vim/bundle/vim-emblem"]
 	path = .vim/bundle/vim-emblem
-	url = https://github.com/heartsentwined/vim-emblem.git
+	url = https://github.com/andorov/vim-emblem.git
