@@ -64,6 +64,7 @@ au BufRead,BufNewFile *.j2.html set filetype=htmljinja
 au BufRead,BufNewFile *.sbt set filetype=scala
 au BufRead,BufNewFile *.nix set filetype=nix
 au BufRead,BufNewFile *.robot set filetype=robot
+au BufRead,BufNewFile *.js.es6 set filetype=javascript
 autocmd! BufRead,BufNewFile *.ics setfiletype icalendar
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
