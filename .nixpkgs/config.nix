@@ -1,4 +1,7 @@
 pkgs: {
+
+    allowUnfree = true;
+
     vim = { netbeans = false;
             tcl = false;
           };
