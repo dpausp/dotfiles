@@ -27,7 +27,16 @@ pkgs: {
          gui = "no";
          flags = ["python"];
       });
-    
+      
+      mumble = pkgs.mumble.override {
+        jackSupport = true;
+        speechdSupport = true;
+      };
+
+      vlc = pkgs.vlc.override {
+        jackSupport = true;
+      };
+
       common = with pkgs; buildEnv {
         name = "common";
         paths = [
