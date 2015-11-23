@@ -97,3 +97,6 @@
 [submodule ".vim/bundle/vim-emblem"]
 	path = .vim/bundle/vim-emblem
 	url = https://github.com/andorov/vim-emblem.git
+[submodule ".vim/bundle/yajs.vim"]
+	path = .vim/bundle/yajs.vim
+	url = https://github.com/othree/yajs.vim
