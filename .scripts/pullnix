@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -a --exclude hardware-configuration.nix --progress `cat ssh_host`:/etc/nixos/\*.nix . "$@"
