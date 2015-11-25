@@ -77,6 +77,7 @@ alias awhereis="git annex whereis"
 ### docker
 
 alias d='docker'
+alias sd="sudo docker"
 alias dpidof="docker inspect --format {{.State.Pid}}"
 alias -g TMUX="script /dev/null -c 'TERM=xterm bash -ilc tmux -2'"
 alias dex="docker exec -it"
@@ -87,7 +88,6 @@ alias pcwd="source ~/.scripts/pcwd"
 alias newest_file="ls -1t | head -n1"
 alias dum='du -m --max-depth=1'
 alias sl='ls --color'
-alias sd="cd /usr/src"
 alias tz="tar xzf"
 alias tj="tar xjf"
 alias rs="rsync -a --stats --rsh='ssh -p 35'"
