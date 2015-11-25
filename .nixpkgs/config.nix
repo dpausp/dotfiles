@@ -9,6 +9,10 @@ pkgs: {
     firefox = {
       icedtea = true;
     };
+
+    chromium = {
+       enablePepperFlash = true; # Chromium's non-NSAPI alternative to Adobe Flash
+    };
           
     packageOverrides = pkgs : with pkgs;
     rec {
@@ -99,6 +103,5 @@ pkgs: {
           telepathy_gabble
         ];
       };
-      
     };
 }
