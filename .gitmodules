@@ -100,3 +100,6 @@
 [submodule ".vim/bundle/yajs.vim"]
 	path = .vim/bundle/yajs.vim
 	url = https://github.com/othree/yajs.vim
+[submodule ".vim/bundle/vim-dirdiff"]
+	path = .vim/bundle/vim-dirdiff
+	url = https://github.com/will133/vim-dirdiff
