@@ -34,6 +34,16 @@ pkgs: {
          gui = "no";
          flags = ["python"];
       });
+
+      idea.pycharm-professional = pkgs.idea.pycharm-professional.override rec {
+        name = "pycharm-professional-${version}";
+        version = "5.0.1";
+        build = "143.595";
+        src = fetchurl {
+          url = "https://download.jetbrains.com/python/${name}.tar.gz";
+          sha256 = "102sfjvchk80911w3qpjsp30wvq73kgpwyqcqdgqxcgm2vqh3183";
+        };
+      };
       
       mumble = pkgs.mumble.override {
         jackSupport = true;
