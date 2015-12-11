@@ -37,11 +37,11 @@ pkgs: {
 
       idea.pycharm-professional = pkgs.idea.pycharm-professional.override rec {
         name = "pycharm-professional-${version}";
-        version = "5.0.1";
-        build = "143.595";
+        version = "5.0.2";
+        build = "143.1184";
         src = fetchurl {
           url = "https://download.jetbrains.com/python/${name}.tar.gz";
-          sha256 = "102sfjvchk80911w3qpjsp30wvq73kgpwyqcqdgqxcgm2vqh3183";
+          sha256 = "08dcwscy01g9jm0x1dg7wainl2xs5xiay5s6fc96vjnss73x960z";
         };
       };
       
