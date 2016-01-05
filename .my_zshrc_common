@@ -1,4 +1,5 @@
 source ~/.keychain/`hostname`-sh &> /dev/null
+eval $(thefuck --alias)
 
 ### zsh settings
 
