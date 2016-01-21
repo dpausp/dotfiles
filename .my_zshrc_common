@@ -99,5 +99,6 @@ alias pstat="python -mpstats"
 alias shm="cd /dev/shm"
 alias py=python
 alias ll="ls -laL"
+alias fu="fuck"
 
 
