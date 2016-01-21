@@ -35,6 +35,7 @@ set textwidth=0
 set history=1000
 set undolevels=1000
 set hidden
+set autowrite
 
 syntax on
 
