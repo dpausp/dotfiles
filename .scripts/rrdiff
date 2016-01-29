@@ -1,0 +1,7 @@
+#!/bin/sh
+dir="$1"
+shift
+for file in "$@"
+do
+    vimdiff $file $dir/$file
+done
