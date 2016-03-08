@@ -57,13 +57,14 @@ pkgs: {
       common = with pkgs; buildEnv {
         name = "common";
         paths = [
-          python
+          python27Full
           gnupg
           keychain
           sharutils
           openssl
-          openssh
           silver-searcher
+          unzip
+          unrar
         ];
       };
 
@@ -75,7 +76,7 @@ pkgs: {
           kde4.kwalletmanager
           gtk_engines
           gajim
-          firefox-wrapper
+          firefox
           thunderbird
           vlc
           youtube-dl
@@ -97,7 +98,8 @@ pkgs: {
           gitAndTools.qgit
           nix-repl
           telnet
-          postgresql94
+          cloc
+          postgresql95
         ];
       };
       
