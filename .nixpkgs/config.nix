@@ -57,49 +57,53 @@ pkgs: {
       common = with pkgs; buildEnv {
         name = "common";
         paths = [
-          python27Full
+          file
           gnupg
           keychain
-          sharutils
           openssl
+          python27Full
+          sharutils
           silver-searcher
-          unzip
           unrar
+          unzip
         ];
       };
 
       desktop = with pkgs; buildEnv {
         name = "desktop";
         paths = [
-          vim_configurable
+          fira-code
+          fira-mono
+          firefox
+          gajim
+          geeqie
+          gtk_engines
           kde4.kde_gtk_config
           kde4.kwalletmanager
-          gtk_engines
-          gajim
-          firefox
+          kde4.okular
           thunderbird
+          vim_configurable
           vlc
           youtube-dl
-          kde4.okular
         ];
       };
       
       dev = with pkgs; buildEnv {
         name = "dev";
         paths = [
-          pgadmin
+          cloc
           eclipses.eclipse_cpp_45
+          git
+          gitAndTools.qgit
+          nginx
+          nix-repl
+          pgadmin
+          postgresql95
           python27Packages.pip
           python27Packages.virtualenv
           python27Packages.virtualenvwrapper
-          wireshark
-          nginx
-          git
-          gitAndTools.qgit
-          nix-repl
           telnet
-          cloc
-          postgresql95
+          wireshark
         ];
       };
       
