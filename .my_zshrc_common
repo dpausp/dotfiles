@@ -100,5 +100,6 @@ alias shm="cd /dev/shm"
 alias py=python
 alias ll="ls -lahL"
 alias fu="fuck"
+alias svi="sudo -E vim"
 
 
