@@ -57,6 +57,7 @@ pkgs: {
       common = with pkgs; buildEnv {
         name = "common";
         paths = [
+          diffoscope
           file
           gnupg
           keychain
@@ -80,6 +81,7 @@ pkgs: {
           gtk_engines
           kde4.kde_gtk_config
           kde4.kwalletmanager
+          kde4.ksnapshot
           kde4.okular
           thunderbird
           vim_configurable
