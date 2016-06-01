@@ -56,7 +56,7 @@ pkgs: {
           sharutils
           silver-searcher
           unrar
-          unzip
+          zip
         ];
       };
 
@@ -87,15 +87,25 @@ pkgs: {
           eclipses.eclipse_cpp_45
           git
           gitAndTools.qgit
+          graphviz
+          hexedit
+          httpie
           nginx
           nix-repl
+          nodePackages.grunt-cli
+          patchelf
           pgadmin
           postgresql95
+          python27Packages.devpi-common
           python27Packages.pip
           python27Packages.virtualenv
           python27Packages.virtualenvwrapper
+          sassc
+          sqlite
+          sqlitebrowser
           telnet
           wireshark
+          zeal
         ];
       };
       
