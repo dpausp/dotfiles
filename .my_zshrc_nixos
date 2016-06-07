@@ -1,2 +1,11 @@
 alias vi=vim
 alias ctl="systemctl --user"
+
+rwhich() {
+    WHICH=`which $1`
+    if [[ $? == 0 ]] then 
+        readlink -f $WHICH
+    else
+        echo $WHICH
+    fi
+}
