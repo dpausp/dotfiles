@@ -35,6 +35,17 @@ pkgs: {
          flags = ["python"];
       });
 
+      eclipse-platform-46 = pkgs.eclipses.buildEclipse {
+          name = "eclipse-cpp-4.6RC4a";
+          description = "Eclipse IDE Platform 4.6 Release Candidate 4a";
+          src =
+            fetchurl {
+              url = http://www.eclipse.org/downloads/download.php?r=1&nf=1&file=/eclipse/downloads/drops4/S-4.6RC4a-201606061100/eclipse-platform-4.6RC4a-linux-gtk-x86_64.tar.gz;
+              sha256 = "14d1b3dq6li6vhqagb8l8616w7cwryrlk4vmdis0avxviqlr1l6c";
+            };
+        };
+
+
       mumble = pkgs.mumble.override {
         jackSupport = true;
         speechdSupport = true;
@@ -84,7 +95,7 @@ pkgs: {
         name = "dev";
         paths = [
           cloc
-          eclipses.eclipse_cpp_45
+          eclipse-platform-46
           git
           gitAndTools.qgit
           graphviz
