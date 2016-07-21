@@ -13,6 +13,4 @@ alias mt_data="rm -rf /dev/shm/mediatum_data && tar xjf ~/mediatum_dumps/mediatu
 
 export WORKON_HOME=~/coding/Venvs
 
-export PATH="$PATH:~/node_modules/.bin"
-
 source ~/.local/bin/virtualenvwrapper.sh 2> /dev/null

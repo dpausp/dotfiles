@@ -1,2 +1,2 @@
-export ZSH_CUSTOM=~/.dotfiles/omz-custom
+export ZSH_CUSTOM=$HOME/.dotfiles/omz-custom
 export PATH="$HOME/.local/bin:$PATH"
