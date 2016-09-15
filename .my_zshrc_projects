@@ -1,15 +1,9 @@
 export MT_DIR=~/git/mediatum
-export MTP_DIR=~/git/mediatum_postgres
-export MTU_DIR=~/git/mediatum_unicode
-export TUM_DIR=~/git
-
-export MEDIATUM_PLUGIN_NAMES="tum mediatum-armus mediatum-spectral mediatum-survey scholar arsearchbox pytsm oauth"
+export ARG_DIR=~/git/arguments
+export MEDIATUM_PLUGIN_NAMES="mediatum-tum mediatum-armus mediatum-survey mediatum-scholar"
 
 alias mt="cd $MT_DIR"
-alias mtp="cd $MTP_DIR"
-alias mtu="cd $MTU_DIR"
-
-alias mt_data="rm -rf /dev/shm/mediatum_data && tar xjf ~/mediatum_dumps/mediatum_data-current.tar.bz2 -C /dev/shm/"
+alias arg="cd $ARG_DIR"
 
 export WORKON_HOME=~/coding/Venvs
 
