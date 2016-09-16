@@ -25,23 +25,21 @@ style "gtkcompact" {
 
 style "compact-toolbar"
 {
-        GtkToolbar::internal-padding = 0 
-            xthickness = 1 
-                ythickness = 1 
+    GtkToolbar::internal-padding = 0 
+    xthickness = 1 
+    ythickness = 1 
 }
 
 style "compact-button"
 {
-        xthickness = 0 
-            ythickness = 0 
+    xthickness = 0 
+    ythickness = 0 
 }
 
-class "GtkToolbar"                  style "compact-toolbar" 
-widget_class "*<GtkToolbar>*<GtkButton>"    style "compact-button"
+class "GtkToolbar" style "compact-toolbar" 
+widget_class "*<GtkToolbar>*<GtkButton>" style "compact-button"
 class "GtkWidget" style "gtkcompact"
 
 binding "NoKeyboardNavigation" {
-            unbind "F10"
+    unbind "F10"
 }
-
-class * binding "NoKeyboardNavigation"
