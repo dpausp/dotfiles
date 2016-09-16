@@ -138,7 +138,7 @@ let g:pandoc#filetypes#pandoc_markdown = 0
 
 "pandoc commands
 
-:command -nargs=+ Pd %!pandoc --no-wrap <args> -
+:command -nargs=+ Pd %!pandoc --wrap=preserve <args> -
 
 
 "neocomplete
