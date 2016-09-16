@@ -44,7 +44,16 @@ pkgs: {
               sha256 = "14d1b3dq6li6vhqagb8l8616w7cwryrlk4vmdis0avxviqlr1l6c";
             };
         };
-
+      
+      when-changed = pkgs.python35Packages.buildPythonPackage {
+        name = "when-changed-0.3.0";
+        doCheck = false;
+        propagatedBuildInputs = with pkgs.python35Packages; [watchdog];
+        src = fetchurl {
+          url = "https://pypi.python.org/packages/83/33/80d220730dddda0cc99eac3c76409d9d8a60a799d0e0fcc6e010c14c2834/when-changed-0.3.0.tar.gz";
+          md5 = "39fa3fd9789b7fe3f6db711307af318e";
+        };
+      };
 
       mumble = pkgs.mumble.override {
         jackSupport = true;
@@ -101,7 +110,6 @@ pkgs: {
           graphviz
           hexedit
           httpie
-          nginx
           nix-repl
           nodePackages.grunt-cli
           patchelf
