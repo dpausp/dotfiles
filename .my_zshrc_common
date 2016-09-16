@@ -10,8 +10,8 @@ bindkey -M viins "^[[5~" history-beginning-search-backward
 bindkey -M viins "^[[6~" history-beginning-search-forward
 
 
-bindkey -M viins "^[[A" history-beginning-search-backward
-bindkey -M viins "^[[B" history-beginning-search-forward
+bindkey -M viins "^[OA" history-beginning-search-backward
+bindkey -M viins "^[OB" history-beginning-search-forward
 
 
 bindkey -M viins "^[OH" vi-beginning-of-line
