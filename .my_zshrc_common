@@ -37,7 +37,7 @@ bindkey -M viins '\ef'   forward-word      # Alt-f
 bindkey -M viins '\eb'   backward-word     # Alt-b
 bindkey -M viins '\ed'   kill-word         # Alt-d                    
 
-export PATH=$PATH:~/.scripts/:~/progs/scala/bin:~/progs/bin:~/.local/bin/:~/node_modules/.bin:~/.cabal/bin
+export PATH=$PATH:~/.scripts/:~/progs/bin:~/.local/bin/
 export LC_MESSAGES=C
 export EDITOR=vim
 export GIT_PAGER="vim -R -"
