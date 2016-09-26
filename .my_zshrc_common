@@ -103,3 +103,9 @@ alias fu="fuck"
 alias svi="sudo -E vim"
 
 
+# run commands via SSH like: RUN="program opt1" zsh 
+# # http://superuser.com/a/790681
+eval "$RUN"
+
+
+
