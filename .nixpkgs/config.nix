@@ -57,15 +57,19 @@ pkgs: {
       common = with pkgs; buildEnv {
         name = "common";
         paths = [
-          diffoscope
+          apg
           file
           gnupg
+          ipcalc
           keychain
           openssl
           python27Full
           sharutils
           silver-searcher
+          tree
+          unison
           unrar
+          unzip
           zip
         ];
       };
@@ -73,6 +77,7 @@ pkgs: {
       desktop = with pkgs; buildEnv {
         name = "desktop";
         paths = [
+          clearlooks-phenix
           fira-code
           fira-mono
           firefox
@@ -80,12 +85,13 @@ pkgs: {
           geeqie
           gtk_engines
           kde4.kde_gtk_config
-          kde4.kwalletmanager
           kde4.ksnapshot
+          kde4.kwalletmanager
           kde4.okular
           thunderbird
           vim_configurable
           vlc
+          xdg-user-dirs
           youtube-dl
         ];
       };
@@ -95,25 +101,33 @@ pkgs: {
         paths = [
           cloc
           eclipses.eclipse-platform
+          fileschanged
           git
           gitAndTools.qgit
           graphviz
           hexedit
+          html-tidy
           httpie
+          jq
+          nix-prefetch-scripts
           nix-repl
           nodePackages.grunt-cli
           patchelf
           pgadmin
           postgresql95
+          # doesn't compile atm
+          #haskellPackages.postgrest
           python27Packages.devpi-common
           python27Packages.pip
           python27Packages.virtualenv
-          python27Packages.virtualenvwrapper
+          redis
           sassc
           sqlite
           sqlitebrowser
           telnet
+          universal-ctags
           wireshark
+          wrk
           zeal
         ];
       };
