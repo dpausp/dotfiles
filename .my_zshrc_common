@@ -91,6 +91,7 @@ alias dum='du -m --max-depth=1'
 alias sl='ls --color'
 alias tz="tar xzf"
 alias tj="tar xjf"
+alias ls="ls --color"
 alias rs="rsync -a --stats --rsh='ssh -p 35'"
 alias rsl="rsync -a --stats --rsh='ssh -p 35 -oNoneEnabled=yes -oNoneSwitch=yes -oHPNBufferSize=8192 -v'"
 alias rsn="rsync -a --stats --rsh='ssh -p 22'"
