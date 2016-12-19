@@ -5,6 +5,7 @@
     co = checkout
     re = rebase
     me = merge
+	mn = merge --no-ff
 [push] 
     default = simple
 [diff]
