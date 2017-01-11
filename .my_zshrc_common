@@ -111,6 +111,9 @@ eval "$RUN"
 # connect via SSH and attach / create tmux session. Detaching the session also disconnects.
 function ssht () { ssh -t $@ "tmux attach || tmux new" }
 
+# first attempt at a personal knowledge base ;)
+function tip() { psql -c "INSERT INTO selftweet (id, content) VALUES('`uuidgen`', '@tip $*')" }
+function sts() { psql -c "select * from selftweet where to_tsvector('german', content) @@ plainto_tsquery('german', '$*');" }
 
 # build a single nix package from my personal collection dir
 function nb() { nix-build --arg pkg $1 }
