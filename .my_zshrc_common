@@ -111,3 +111,6 @@ eval "$RUN"
 # connect via SSH and attach / create tmux session. Detaching the session also disconnects.
 function ssht () { ssh -t $@ "tmux attach || tmux new" }
 
+
+# build a single nix package from my personal collection dir
+function nb() { nix-build --arg pkg $1 }
