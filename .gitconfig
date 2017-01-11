@@ -20,3 +20,4 @@
     pull = true
     fetch = true
     push = true
+	interactive = true
