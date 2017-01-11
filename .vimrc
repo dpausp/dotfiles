@@ -18,6 +18,7 @@ set softtabstop=4
 set backspace=indent,eol,start
 set encoding=utf8
 set wildmenu
+set wildmode=longest:list,full
 set wildignore=*.pyc,*.o,*.class,*.swp,*.bak,*.png,*.jpeg,*.jpg
 set commentstring=" \ #\ %s"
 set foldlevel=0
@@ -86,6 +87,7 @@ map <C-T><C-P> :set filetype=python <CR>
 map <C-T><C-J> :set filetype=jade <CR>
 map <C-T><C-M> :set filetype=markdown <CR>
 map <C-T><C-Y> :set filetype=yaml <CR>
+map <C-T><C-N> :set filetype=nix <CR>
 map <F10> :w <CR> :make <CR>
 map <F3> :NERDTreeToggle<CR>
 map <leader>d <Plug>Kwbd<CR>
