@@ -121,3 +121,5 @@ function nb() {
 	shift
 	nix-build --arg pkg $PKG "$@"
 }
+
+function nbu() { nb "$@" --argstr channel unstable }
