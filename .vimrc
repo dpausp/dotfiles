@@ -53,6 +53,7 @@ autocmd Filetype ruby set ts=2 sts=2 sw=2
 autocmd Filetype python set ts=4 sts=4 sw=4
 autocmd Filetype logstash set ts=4 sts=4 sw=4
 autocmd Filetype nix set ts=2 sts=2 sw=2
+autocmd Filetype elm set ts=4 sts=4 sw=4
 
 colorscheme elflord
 
@@ -73,6 +74,8 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
 "let g:syntastic_python_checker_args = '--rcfile=~/coding/python/pylintrc-pydev' 
 "let g:syntastic_python_checker_args = '--ignore=E501'
+"
+let g:syntastic_elm_checkers = ['elm_make']
 
 let mapleader=","
 set pastetoggle=<C-T><C-T>
