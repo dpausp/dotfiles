@@ -1,10 +1,14 @@
 #!/bin/sh
 
-git filter-branch --env-filter '
-OLD_EMAIL="$1"
-NEW_NAME="$2"
-NEW_EMAIL="$3"
+OLD_EMAIL=$1
+NEW_NAME=${2:-`git config user.name`}
+NEW_EMAIL=${3:-`git config user.email`}
 
+git filter-branch --env-filter '
+OLD_EMAIL='"$OLD_EMAIL"'
+NEW_NAME='"$NEW_NAME"'
+NEW_EMAIL='"$NEW_EMAIL"'
+''
 if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
 then
     export GIT_COMMITTER_NAME="$NEW_NAME"
