@@ -63,7 +63,6 @@ pkgs: {
           ipcalc
           keychain
           openssl
-          python27Full
           sharutils
           silver-searcher
           tree
@@ -117,9 +116,6 @@ pkgs: {
           postgresql95
           # doesn't compile atm
           #haskellPackages.postgrest
-          python27Packages.devpi-common
-          python27Packages.pip
-          python27Packages.virtualenv
           redis
           sassc
           sqlite
