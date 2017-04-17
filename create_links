@@ -9,6 +9,7 @@ ln -sf .dotfiles/.my_zshrc_common
 ln -sf .dotfiles/.vimrc
 ln -sf .dotfiles/.vim
 ln -sf .dotfiles/.tmux
+ln -sf .dotfiles/.psqlrc
 
 if [ "$1" = "gentoo" ]; then
     ln -sf .dotfiles/.zshenv
