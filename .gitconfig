@@ -1,6 +1,6 @@
 [user]
-    name = Tobias Stenzel
-	email = tobias.stenzel@tum.de
+	name = dpausp
+	email = dpausp@posteo.de
 [alias]
     co = checkout
     re = rebase
@@ -21,3 +21,5 @@
     fetch = true
     push = true
 	interactive = true
+[core]
+	excludesfile = ~/.gitignore_global

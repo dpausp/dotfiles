@@ -10,6 +10,7 @@ ln -sf .dotfiles/.vimrc
 ln -sf .dotfiles/.vim
 ln -sf .dotfiles/.tmux
 ln -sf .dotfiles/.psqlrc
+ln -sf .dotfiles/.gitignore_global
 
 if [ "$1" = "gentoo" ]; then
     ln -sf .dotfiles/.zshenv
