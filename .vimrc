@@ -49,6 +49,7 @@ autocmd Filetype jinja set ts=2 sts=2 sw=2
 autocmd Filetype htmljinja set ts=2 sts=2 sw=2
 autocmd Filetype scala set ts=2 sts=2 sw=2
 autocmd Filetype jade set ts=2 sts=2 sw=2
+autocmd Filetype pug set ts=2 sts=2 sw=2
 autocmd Filetype ruby set ts=2 sts=2 sw=2
 autocmd Filetype python set ts=4 sts=4 sw=4
 autocmd Filetype logstash set ts=4 sts=4 sw=4
@@ -64,7 +65,8 @@ au BufRead,BufNewFile *.gradle  set filetype=groovy
 au BufRead,BufNewFile *.j2* set filetype=htmljinja
 au BufRead,BufNewFile *.html.j2 set filetype=htmljinja
 au BufRead,BufNewFile *.j2.html set filetype=htmljinja
-au BufRead,BufNewFile *.j2.jade set filetype=jade
+au BufRead,BufNewFile *.j2.jade set filetype=pug
+au BufRead,BufNewFile *.j2.pug set filetype=pug
 au BufRead,BufNewFile *.sbt set filetype=scala
 au BufRead,BufNewFile *.nix set filetype=nix
 au BufRead,BufNewFile *.robot set filetype=robot
@@ -87,7 +89,7 @@ map <C-T><C-H> :set filetype=htmljinja <CR>
 map <C-T><C-I> :set filetype=jinja <CR>
 map <C-T><C-K> :set filetype=coffee <CR>
 map <C-T><C-P> :set filetype=python <CR>
-map <C-T><C-J> :set filetype=jade <CR>
+map <C-T><C-J> :set filetype=pug <CR>
 map <C-T><C-M> :set filetype=markdown <CR>
 map <C-T><C-Y> :set filetype=yaml <CR>
 map <C-T><C-N> :set filetype=nix <CR>
