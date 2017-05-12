@@ -112,3 +112,6 @@
 [submodule ".vim/bundle/riv.vim"]
 	path = .vim/bundle/riv.vim
 	url = https://github.com/Rykka/riv.vim
+[submodule ".vim/bundle/vim-scala"]
+	path = .vim/bundle/vim-scala
+	url = https://github.com/derekwyatt/vim-scala
