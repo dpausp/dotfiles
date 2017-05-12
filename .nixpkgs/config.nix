@@ -113,7 +113,7 @@ pkgs: {
           nodePackages.grunt-cli
           patchelf
           pgadmin
-          postgresql95
+          postgresql96
           # doesn't compile atm
           #haskellPackages.postgrest
           redis
