@@ -8,21 +8,17 @@ echo old email $OLD_EMAIL
 echo new email $NEW_EMAIL
 echo new name $NEW_NAME
 
-git filter-branch --env-filter '
-OLD_EMAIL='"$OLD_EMAIL"'
-NEW_NAME='"$NEW_NAME"'
-NEW_EMAIL='"$NEW_EMAIL"'
-''
-if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
+ENV_FILTER='
+if [ "$GIT_COMMITTER_EMAIL" = '"$OLD_EMAIL"' ]
 then
-    export GIT_COMMITTER_NAME="$NEW_NAME"
-    echo $NEW_NAME
-    export GIT_COMMITTER_EMAIL="$NEW_EMAIL"
+    export GIT_COMMITTER_NAME="'"$NEW_NAME"'"
+    export GIT_COMMITTER_EMAIL='"$NEW_EMAIL"'
 fi
-if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
+if [ "$GIT_AUTHOR_EMAIL" = '"$OLD_EMAIL"' ]
 then
-    export GIT_AUTHOR_NAME="$NEW_NAME"
-    echo $NEW_NAME
-    export GIT_AUTHOR_EMAIL="$NEW_EMAIL"
+    export GIT_AUTHOR_NAME="'"$NEW_NAME"'"
+    export GIT_AUTHOR_EMAIL='"$NEW_EMAIL"'
 fi
-' --tag-name-filter cat -- --branches --tags
+' 
+
+git filter-branch --env-filter "$ENV_FILTER" --tag-name-filter cat -- --branches --tags
