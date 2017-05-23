@@ -35,13 +35,13 @@ pkgs: {
          flags = ["python"];
       });
 
-      when-changed = pkgs.python35Packages.buildPythonPackage {
+      when-changed = pkgs.python36Packages.buildPythonPackage {
         name = "when-changed-0.3.0";
         doCheck = false;
-        propagatedBuildInputs = with pkgs.python35Packages; [watchdog];
+        propagatedBuildInputs = with pkgs.python36Packages; [watchdog];
         src = fetchurl {
           url = "https://pypi.python.org/packages/83/33/80d220730dddda0cc99eac3c76409d9d8a60a799d0e0fcc6e010c14c2834/when-changed-0.3.0.tar.gz";
-          md5 = "39fa3fd9789b7fe3f6db711307af318e";
+          sha256 = "98bb1b943e5936bcd60bed8189f7d7494b52095dc92d2a804be49603b6b9a372";
         };
       };
 
@@ -83,10 +83,9 @@ pkgs: {
           gajim
           geeqie
           gtk_engines
-          kde4.kde_gtk_config
-          kde4.ksnapshot
-          kde4.kwalletmanager
-          kde4.okular
+          kdeApplications.kwalletmanager
+          kdeApplications.okular
+          spectacle
           thunderbird
           vim_configurable
           vlc
