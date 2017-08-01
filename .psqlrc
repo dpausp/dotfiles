@@ -13,5 +13,8 @@
 \set COMP_KEYWORD_CASE upper
 \unset QUIET
 
+-- pretty lines
+\pset linestyle unicode
+
 \set s SAVEPOINT
 \set rs 'ROLLBACK TO SAVEPOINT'
