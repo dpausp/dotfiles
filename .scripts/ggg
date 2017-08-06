@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+import sys 
+import os
+s = os.system
+
+def runforall():
+    argcmd = " ".join(sys.argv[1:])
+    if not argcmd.strip():
+        print("command was empty!")
+        return
+
+    if argcmd.strip().endswith("lastcommit"):
+        argcmd = "git --no-pager log -n1 --pretty=medium"
+
+    print()
+    print("running: '" + argcmd + "' for all dirs")
+    for entry in os.scandir("."):
+        if entry.is_dir():
+            os.chdir(entry.path)
+            print("=" * 50) 
+            print(entry.name)
+            print("-" * 50) 
+            s("git " + argcmd)
+            os.chdir("..")
+    print()
+
+if __name__ == "__main__":
+    runforall()
+
