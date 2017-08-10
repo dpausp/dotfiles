@@ -116,6 +116,7 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 " NERDTree
 " let the NERDTree ignore some file type (generated stuff and the like)
 let NERDTreeIgnore=['\.vim$', '\~$', '\.gen.js$', '\.map$', '\.pyc$']
+let NERDTreeMinimalUI = 1
 
 
 "Jedi
