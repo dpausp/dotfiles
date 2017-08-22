@@ -102,6 +102,10 @@ alias ll="ls -lahL"
 alias fu="fuck"
 alias svi="sudo -E vim"
 
+### global aliases
+
+alias -g X="| tr -d '\n' | xclip"
+
 
 # run commands via SSH like: RUN="program opt1" zsh 
 # # http://superuser.com/a/790681
