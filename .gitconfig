@@ -5,7 +5,8 @@
     co = checkout
     re = rebase
     me = merge
-	mn = merge --no-ff
+    mn = merge --no-ff
+    id = rev-parse HEAD 
 [push] 
     default = simple
 [diff]
