@@ -4,6 +4,8 @@ pkgs: {
 
     vim = { netbeans = false;
             tcl = false;
+            ftNix = false;
+            python = true;
           };
 
     firefox = {
@@ -16,9 +18,11 @@ pkgs: {
           
     packageOverrides = pkgs : with pkgs;
     rec {
-      vim_configurable = vimUtils.makeCustomizable (pkgs.vim_configurable.override {
-         flags = ["python"];
-      });
+      myVim = pkgs.vim_configurable.customize {
+        name = "vim";
+        vimrcConfig.packages.thisPackage.start = [ vimPlugins.vim-nix ];
+        vimrcConfig.customRC = builtins.readFile ../.dotfiles/.vimrc;
+      };
       
       vim_configurable_nox = vimUtils.makeCustomizable (pkgs.vim_configurable.override {
          libX11 = null;
@@ -85,9 +89,9 @@ pkgs: {
           gtk_engines
           kdeApplications.kwalletmanager
           kdeApplications.okular
+          myVim
           spectacle
           thunderbird
-          vim_configurable
           vlc
           xdg-user-dirs
           youtube-dl
