@@ -95,6 +95,7 @@ pkgs: {
           vlc
           xdg-user-dirs
           youtube-dl
+          xclip
         ];
       };
       
