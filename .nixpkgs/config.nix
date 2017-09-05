@@ -20,7 +20,7 @@ pkgs: {
     rec {
       myVim = pkgs.vim_configurable.customize {
         name = "vim";
-        vimrcConfig.packages.thisPackage.start = [ vimPlugins.vim-nix ];
+        vimrcConfig.packages.thisPackage.start = [ vimPlugins.vim-nix vimPlugins.elm-vim ];
         vimrcConfig.customRC = builtins.readFile ../.dotfiles/.vimrc;
       };
       
