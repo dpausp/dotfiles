@@ -82,6 +82,15 @@ alias dpidof="docker inspect --format {{.State.Pid}}"
 alias -g TMUX="script /dev/null -c 'TERM=xterm bash -ilc tmux -2'"
 alias dex="docker exec -it"
 
+
+### rails dev
+
+alias rails="bundle exec rails"
+alias rake="bundle exec rake"
+
+###
+
+
 ### other 
 
 alias pcwd="source ~/.scripts/pcwd"
@@ -105,6 +114,7 @@ alias svi="sudo -E vim"
 ### global aliases
 
 alias -g X="| tr -d '\n' | xclip"
+
 
 
 # run commands via SSH like: RUN="program opt1" zsh 
