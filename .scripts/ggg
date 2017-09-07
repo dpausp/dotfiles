@@ -10,7 +10,7 @@ def runforall():
         return
 
     if argcmd.strip().endswith("lastcommit"):
-        argcmd = "git --no-pager log -n1 --pretty=medium"
+        argcmd = "--no-pager log -n1 --pretty=medium"
 
     print()
     print("running: '" + argcmd + "' for all dirs")
