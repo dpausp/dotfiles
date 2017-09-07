@@ -88,7 +88,9 @@ alias dex="docker exec -it"
 alias rails="bundle exec rails"
 alias rake="bundle exec rake"
 
-###
+### Nix
+
+alias update-persistent-nix-shell="nix-instantiate --indirect --add-root $PWD/shell.drv"
 
 
 ### other 

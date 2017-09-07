@@ -1,4 +1,10 @@
 #!/usr/bin/env zsh
 command=${@:-zsh}
 echo "Running $command in nix-shell..."
-nix-shell --run "$command"
+
+if [ -e "shell.drv" ]; then
+    echo "using persistent shell"
+    nix-shell $(pwd)/shell.drv --run "$command"
+else
+    nix-shell --run "$command"
+fi
