@@ -45,7 +45,7 @@ export GIT_PAGER="vim -R -"
 
 unalias d
 
-### aliases
+### aliases and functions
 
 ### git
 
@@ -87,6 +87,11 @@ alias dex="docker exec -it"
 
 alias rails="bundle exec rails"
 alias rake="bundle exec rake"
+alias rspec="bundle exec rspec"
+alias brakeman="bundle exec brakeman"
+
+function test_plugin { rspec plugins/$1/test/**/*.rb }
+
 
 ### Nix
 
