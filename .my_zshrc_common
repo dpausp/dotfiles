@@ -95,7 +95,9 @@ function test_plugin { rspec plugins/$1/test/**/*.rb }
 
 ### Nix
 
-alias update-persistent-nix-shell="nix-instantiate --indirect --add-root $PWD/shell.drv"
+function update-persistent-nix-shell() {
+    nix-instantiate --indirect --add-root $PWD/shell.drv
+}
 
 
 ### other 
