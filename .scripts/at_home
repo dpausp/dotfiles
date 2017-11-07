@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 ssid=`iwgetid --scheme`
-zone=`nmcli -t -f connection.zone connection show wired@home | awk -F':' '{ print $2 }'`
+active_connection=`nmcli -t -f name connection show --active | head -n1`
+zone=`nmcli -t -f connection.zone connection show $active_connection | awk -F':' '{ print $2 }'`
 echo ssid $ssid
 echo zone $zone
 if [[ $zone = "home" ]]; then
