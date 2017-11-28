@@ -76,20 +76,26 @@ pkgs: {
         name = "desktop";
         paths = [
           clearlooks-phenix
+          eclipses.eclipse-platform
           fira-code
           fira-mono
           gajim
           geeqie
+          gitAndTools.qgit
           gtk_engines
           kdeApplications.kwalletmanager
           kdeApplications.okular
           myVim
+          pgadmin
           spectacle
+          sqlitebrowser
           thunderbird
           vlc
+          wireshark
           xdg-user-dirs
           youtube-dl
           xclip
+          zeal
         ];
       };
       
@@ -97,10 +103,8 @@ pkgs: {
         name = "dev";
         paths = [
           cloc
-          eclipses.eclipse-platform
           fileschanged
           git
-          gitAndTools.qgit
           graphviz
           hexedit
           html-tidy
@@ -110,19 +114,15 @@ pkgs: {
           nix-repl
           nodePackages.grunt-cli
           patchelf
-          pgadmin
           postgresql96
           # doesn't compile atm
           #haskellPackages.postgrest
           redis
           sassc
           sqlite
-          sqlitebrowser
           telnet
           universal-ctags
-          wireshark
           wrk
-          zeal
         ];
       };
       
