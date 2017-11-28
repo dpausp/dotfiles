@@ -50,12 +50,7 @@ pkgs: {
       };
 
       mumble = pkgs.mumble.override {
-        jackSupport = true;
         speechdSupport = true;
-      };
-
-      vlc = pkgs.vlc.override {
-        jackSupport = true;
       };
 
       common = with pkgs; buildEnv {
@@ -83,7 +78,6 @@ pkgs: {
           clearlooks-phenix
           fira-code
           fira-mono
-          firefox
           gajim
           geeqie
           gtk_engines
