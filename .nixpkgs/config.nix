@@ -49,6 +49,17 @@ pkgs: {
         };
       };
 
+
+      qutebrowser = pkgs.qutebrowser.overrideAttrs(oldAttrs: rec {
+        name = "qutebrowser-${version}";
+        version = "1.1.1";
+        src = fetchurl {
+          url = "https://github.com/qutebrowser/qutebrowser/archive/v${version}.tar.gz";
+          sha256 = "0rli76jsz7dcbsiwiz8gi09r8l7y1kymzhzsswflhj17733vbics";
+        };
+      });
+
+
       mumble = pkgs.mumble.override {
         speechdSupport = true;
       };
