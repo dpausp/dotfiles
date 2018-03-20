@@ -22,11 +22,13 @@ set mouse=a
 set nospell
 set nu
 set ruler
+set shiftround
 set shiftwidth=4
 set showmatch
 set showmode
 set smartcase
 set smartindent
+set smarttab
 set softtabstop=4
 set spelllang=de
 set tabstop=4
