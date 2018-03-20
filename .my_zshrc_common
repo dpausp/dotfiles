@@ -1,4 +1,5 @@
 source ~/.keychain/`hostname`-sh &> /dev/null
+source ~/.dotfiles/z.sh
 
 ### zsh settings
 
