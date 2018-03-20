@@ -3,40 +3,40 @@ set nocompatible
 call pathogen#infect()
 "inoremap <Nul> <C-x><C-n>
 
-set incsearch
-set tabstop=4
-set shiftwidth=4
 set autoindent
-set expandtab
-set smartindent
-set showmatch
-set smartcase
-set showmode
-set nu
-set ruler
-set softtabstop=4
+set autowrite
 set backspace=indent,eol,start
-set encoding=utf8
-set wildmenu
-set wildmode=longest:list,full
-set wildignore=*.pyc,*.o,*.class,*.swp,*.bak,*.png,*.jpeg,*.jpg
-set commentstring=" \ #\ %s"
-set foldlevel=0
+set backupdir=~/.vim/sessions
 set clipboard+=unnamed
+set commentstring=" \ #\ %s"
+set dir=~/.vim/sessions
+set encoding=utf8
+set expandtab
+set foldlevel=0
+set hidden
+set history=1000
+set hlsearch
+set incsearch
+set ls=2
 set mouse=a
 set nospell
+set nu
+set ruler
+set shiftwidth=4
+set showmatch
+set showmode
+set smartcase
+set smartindent
+set softtabstop=4
 set spelllang=de
-set ls=2
-set backupdir=~/.vim/sessions
-set dir=~/.vim/sessions
+set tabstop=4
+set textwidth=0
 set title
 set titlestring=%F
-set hlsearch
-set textwidth=0
-set history=1000
 set undolevels=1000
-set hidden
-set autowrite
+set wildignore=*.pyc,*.o,*.class,*.swp,*.bak,*.png,*.jpeg,*.jpg
+set wildmenu
+set wildmode=longest:list,full
 
 syntax on
 
