@@ -125,7 +125,7 @@ alias svi="sudo -E vim"
 
 alias -g X="| tr -d '\n' | xclip"
 
-
+command -v thefuck && eval $(thefuck --alias)
 
 # run commands via SSH like: RUN="program opt1" zsh 
 # # http://superuser.com/a/790681
