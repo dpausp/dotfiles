@@ -146,3 +146,6 @@ function nb() {
 }
 
 function nbu() { nb "$@" --argstr channel unstable }
+
+
+function update_pipenv() { pipenv update && git commit Pipfile.lock -m "update Pipenv.lock"  }
