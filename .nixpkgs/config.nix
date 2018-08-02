@@ -49,17 +49,6 @@ pkgs: {
         };
       };
 
-
-      qutebrowser = pkgs.qutebrowser.overrideAttrs(oldAttrs: rec {
-        name = "qutebrowser-${version}";
-        version = "1.2.1";
-        src = fetchurl {
-          url = "https://github.com/qutebrowser/qutebrowser/archive/v${version}.tar.gz";
-          sha256 = "0pf20cxxx28k4inkr76b5dn9ygr8l7rgfypnpmqj31p0bjqp065r";
-        };
-      });
-
-
       mumble = pkgs.mumble.override {
         speechdSupport = true;
       };
@@ -125,7 +114,6 @@ pkgs: {
           nix-repl
           nodePackages.grunt-cli
           patchelf
-          postgresql96
           # doesn't compile atm
           #haskellPackages.postgrest
           redis
