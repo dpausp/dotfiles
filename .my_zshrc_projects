@@ -1,10 +1,8 @@
-export MT_DIR=~/git/mediatum
 export REDMINE_DIR=~/git/redmine
-export ARG_DIR=~/git/arguments
+export EKP_DIR=~/git/ekklesia-portal
 export AL_DIR=~/git/worksets/alphanodes
 
-alias mt="cd $MT_DIR"
-alias arg="cd $ARG_DIR"
+alias ekp="cd $ARG_DIR"
 alias red="cd $REDMINE_DIR"
 alias al="cd $AL_DIR"
 alias rsh="cd $REDMINE_DIR; nish"
