@@ -8,11 +8,14 @@ let
   commonPkgs = pkgs: with pkgs; [
     apg
     bat
+    fd
     file
+    fzf
     gnupg
     ipcalc
     keychain
     openssl
+    pass
     sharutils
     silver-searcher
     tree
