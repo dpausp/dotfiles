@@ -24,15 +24,19 @@ let
 
   desktopPkgs = pkgs: with pkgs; [
     clearlooks-phenix
+    chromium
     eclipses.eclipse-platform
     fira-code
     fira-mono
     gajim
     geeqie
+    gimp
     gitAndTools.qgit
     gtk_engines
     kdeApplications.kwalletmanager
     (myVim pkgs)
+    okular
+    qutebrowser
     pgadmin
     spectacle
     sqlitebrowser
@@ -41,6 +45,7 @@ let
     wireshark
     xdg-user-dirs
     youtube-dl
+    xsane
     xclip
     zeal
   ];
