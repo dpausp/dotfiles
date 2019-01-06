@@ -1,8 +1,88 @@
-pkgs: {
+let 
+  myVim = pkgs: with pkgs; vim_configurable.customize {
+    name = "vim";
+    vimrcConfig.packages.thisPackage.start = [ vimPlugins.vim-nix vimPlugins.elm-vim ];
+    vimrcConfig.customRC = builtins.readFile ../.dotfiles/.vimrc;
+  };
+      
+  commonPkgs = pkgs: with pkgs; [
+    apg
+    bat
+    file
+    gnupg
+    ipcalc
+    keychain
+    openssl
+    sharutils
+    silver-searcher
+    tree
+    unison
+    unrar
+    unzip
+    zip
+  ];
 
+  desktopPkgs = pkgs: with pkgs; [
+    clearlooks-phenix
+    eclipses.eclipse-platform
+    fira-code
+    fira-mono
+    gajim
+    geeqie
+    gitAndTools.qgit
+    gtk_engines
+    kdeApplications.kwalletmanager
+    (myVim pkgs)
+    pgadmin
+    spectacle
+    sqlitebrowser
+    thunderbird
+    vlc
+    wireshark
+    xdg-user-dirs
+    youtube-dl
+    xclip
+    zeal
+  ];
+
+  develPkgs = pkgs: with pkgs; [
+    cloc
+    fileschanged
+    git
+    graphviz
+    hexedit
+    html-tidy
+    httpie
+    jq
+    nix-prefetch-scripts
+    nodePackages.grunt-cli
+    patchelf
+    # doesn't compile atm
+    #haskellPackages.postgrest
+    redis
+    sassc
+    sqlite
+    telnet
+    universal-ctags
+    wrk
+  ];
+
+
+  telepathyPkgs = pkgs: with pkgs; [
+    kde4.telepathy.accounts_kcm
+    kde4.telepathy.auth_handler
+    kde4.telepathy.contact_list
+    kde4.telepathy.desktop_applets
+    kde4.telepathy.text_ui
+    telepathy_haze
+    telepathy_gabble
+  ];
+
+in pkgs: {
     allowUnfree = true;
 
     vim = { netbeans = false;
+
             tcl = false;
             ftNix = false;
             python = true;
@@ -15,15 +95,9 @@ pkgs: {
     chromium = {
        enablePepperFlash = true; # Chromium's non-NSAPI alternative to Adobe Flash
     };
-          
+
     packageOverrides = pkgs : with pkgs;
     rec {
-      myVim = pkgs.vim_configurable.customize {
-        name = "vim";
-        vimrcConfig.packages.thisPackage.start = [ vimPlugins.vim-nix vimPlugins.elm-vim ];
-        vimrcConfig.customRC = builtins.readFile ../.dotfiles/.vimrc;
-      };
-      
       vim_configurable_nox = vimUtils.makeCustomizable (pkgs.vim_configurable.override {
          libX11 = null;
          libXext = null;
@@ -53,89 +127,10 @@ pkgs: {
         speechdSupport = true;
       };
 
-      common = with pkgs; buildEnv {
-        name = "common";
-        paths = [
-          apg
-          file
-          gnupg
-          ipcalc
-          keychain
-          openssl
-          sharutils
-          silver-searcher
-          tree
-          unison
-          unrar
-          unzip
-          zip
-        ];
-      };
-
-      desktop = with pkgs; buildEnv {
-        name = "desktop";
-        paths = [
-          clearlooks-phenix
-          eclipses.eclipse-platform
-          fira-code
-          fira-mono
-          gajim
-          geeqie
-          gitAndTools.qgit
-          gtk_engines
-          kdeApplications.kwalletmanager
-          kdeApplications.okular
-          myVim
-          pgadmin
-          spectacle
-          sqlitebrowser
-          thunderbird
-          vlc
-          wireshark
-          xdg-user-dirs
-          youtube-dl
-          xclip
-          zeal
-        ];
-      };
-      
-      dev = with pkgs; buildEnv {
-        name = "dev";
-        paths = [
-          cloc
-          fileschanged
-          git
-          graphviz
-          hexedit
-          html-tidy
-          httpie
-          jq
-          nix-prefetch-scripts
-          nix-repl
-          nodePackages.grunt-cli
-          patchelf
-          # doesn't compile atm
-          #haskellPackages.postgrest
-          redis
-          sassc
-          sqlite
-          telnet
-          universal-ctags
-          wrk
-        ];
-      };
-      
-      telepathy = with pkgs; buildEnv {
-        name = "telepathy";
-        paths = [
-          kde4.telepathy.accounts_kcm
-          kde4.telepathy.auth_handler
-          kde4.telepathy.contact_list
-          kde4.telepathy.desktop_applets
-          kde4.telepathy.text_ui
-          telepathy_haze
-          telepathy_gabble
-        ];
+      all_pkgs = pkgs.buildEnv {
+        name = "all_pkgs";
+        pathsToLink = [ "/bin" "/share" ];
+        paths = (commonPkgs pkgs) ++ (desktopPkgs pkgs) ++ (develPkgs pkgs);
       };
     };
 }
