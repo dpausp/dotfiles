@@ -37,9 +37,12 @@ let
     };
 
   in [
+    amarok
     clearlooks-phenix
     chromium
+    dmenu
     eclipses.eclipse-platform
+    digikam
     fira-code
     fira-mono
     gajim
@@ -47,12 +50,15 @@ let
     gimp
     gitAndTools.qgit
     gtk_engines
+    img2pdf
     kdeApplications.kwalletmanager
     mumble
     myVim
     okular
     qutebrowser
+    pdftk
     pgadmin
+    simplescreenrecorder
     spectacle
     sqlitebrowser
     thunderbird
