@@ -1,6 +1,9 @@
 source ~/.keychain/`hostname`-sh &> /dev/null
 source ~/.dotfiles/z.sh
 
+source ~/.nix-profile/share/fzf/completion.zsh
+source ~/.nix-profile/share/fzf/key-bindings.zsh
+
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
@@ -39,6 +42,9 @@ bindkey -M vicmd '\ed'   kill-word         # Alt-d
 bindkey -M viins '\ef'   forward-word      # Alt-f
 bindkey -M viins '\eb'   backward-word     # Alt-b
 bindkey -M viins '\ed'   kill-word         # Alt-d                    
+
+# disable hosts completion because I use /etc/hosts to block many unwanted sites that would appear as completions without that setting
+zstyle ':completion:*:*:*' hosts off
 
 export PATH=$PATH:~/.scripts/:~/progs/bin:~/.local/bin/
 export LC_MESSAGES=C
@@ -140,6 +146,7 @@ alias py=python
 alias ll="ls -lahL"
 alias fu="fuck"
 alias svi="sudo -E vim"
+
 
 ### global aliases
 
