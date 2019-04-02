@@ -168,5 +168,10 @@ function nb() {
 
 function nbu() { nb "$@" --argstr channel unstable }
 
-
 function update_pipenv() { pipenv update && git commit Pipfile.lock -m "update Pipenv.lock"  }
+
+# pretty json output with formatting, highlighting (by jq) and line numbers (by bat)
+function jat { jq '.' -C < "$1" | bat }
+
+# interactively find a PID from verbose ps output and print it
+function fpid { ps aux | fzf -m -q "$@" | awk '{ print $2 }' }
