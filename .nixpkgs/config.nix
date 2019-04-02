@@ -8,16 +8,21 @@ let
   commonPkgs = pkgs: with pkgs; [
     apg
     bat
+    bc
     fd
     file
     fzf
     gnupg
     ipcalc
     keychain
-    openssl
+    nix-index
+    openssl_1_1
     pass
+    python37Packages.python
+    qrencode
     sharutils
     silver-searcher
+    sshuttle
     tree
     unison
     unrar
