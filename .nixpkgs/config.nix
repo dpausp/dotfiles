@@ -154,6 +154,13 @@ in pkgs: {
         };
       };
 
+      httpbin = pkgs.python37Packages.httpbin.overrideAttrs(oldAttrs: {
+        patchPhase = ''
+          sed -i "/os.mkdir('static')/d" httpbin/core.py
+        '';
+      })
+      ;
+
       all_pkgs = pkgs.buildEnv {
         name = "all_pkgs";
         pathsToLink = [ "/bin" "/share" ];
