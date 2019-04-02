@@ -1,10 +1,4 @@
 let 
-  myVim = pkgs: with pkgs; vim_configurable.customize {
-    name = "vim";
-    vimrcConfig.packages.thisPackage.start = [ vimPlugins.vim-nix vimPlugins.elm-vim ];
-    vimrcConfig.customRC = builtins.readFile ../.dotfiles/.vimrc;
-  };
-      
   commonPkgs = pkgs: with pkgs; [
     apg
     bat
@@ -30,7 +24,19 @@ let
     zip
   ];
 
-  desktopPkgs = pkgs: with pkgs; [
+  desktopPkgs = pkgs: with pkgs; 
+  let 
+    mumble = pkgs.mumble.override {
+      speechdSupport = true;
+    };
+
+    myVim = pkgs.vim_configurable.customize {
+      name = "vim";
+      vimrcConfig.packages.thisPackage.start = [ vimPlugins.vim-nix vimPlugins.elm-vim ];
+      vimrcConfig.customRC = builtins.readFile ../.dotfiles/.vimrc;
+    };
+
+  in [
     clearlooks-phenix
     chromium
     eclipses.eclipse-platform
@@ -42,7 +48,8 @@ let
     gitAndTools.qgit
     gtk_engines
     kdeApplications.kwalletmanager
-    (myVim pkgs)
+    mumble
+    myVim
     okular
     qutebrowser
     pgadmin
@@ -134,10 +141,6 @@ in pkgs: {
           url = "https://pypi.python.org/packages/83/33/80d220730dddda0cc99eac3c76409d9d8a60a799d0e0fcc6e010c14c2834/when-changed-0.3.0.tar.gz";
           sha256 = "98bb1b943e5936bcd60bed8189f7d7494b52095dc92d2a804be49603b6b9a372";
         };
-      };
-
-      mumble = pkgs.mumble.override {
-        speechdSupport = true;
       };
 
       all_pkgs = pkgs.buildEnv {
