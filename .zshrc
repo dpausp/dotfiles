@@ -47,7 +47,7 @@ ZSH_CUSTOM=~/.dotfiles/omz-custom
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git docker pip common-aliases dirhistory git-annex git-extras tmux urltools vi-mode zsh-syntax-highlighting opp)  
+plugins=(git dirhistory git-annex git-extras tmux urltools vi-mode zsh-syntax-highlighting opp)  
 
 source $ZSH/oh-my-zsh.sh
 
