@@ -73,6 +73,9 @@ let
 
   develPkgs = pkgs: with pkgs; [
     cloc
+    cookiecutter
+    dhall
+    dhall-json
     fileschanged
     git
     graphviz
@@ -90,8 +93,10 @@ let
     sqlite
     telnet
     universal-ctags
+    vscode
     wrk
   ];
+  
 
 
   telepathyPkgs = pkgs: with pkgs; [
