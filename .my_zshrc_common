@@ -91,10 +91,27 @@ alias dex="docker exec -it"
 
 alias rails="bundle exec rails"
 alias rake="bundle exec rake"
-alias rspec="bundle exec rspec"
 alias brakeman="bundle exec brakeman"
+alias slim-lint="bundle exec slim-lint"
+alias mrspec="bundle exec mrspec"
+alias check_rc="bundle exec rubocop -R -fs -P"
 
-function test_plugin { rspec plugins/$1/test/**/*.rb }
+function test_plugin { mrspec plugins/$1/test/; shift; "$@" }
+function slim_lint_plugin { 
+    bundle exec slim-lint -c plugins/$1/.slim-lint.yml plugins/$1;
+    }
+function lint_plugin { 
+    bundle exec rubocop -R -fs -P --except Metrics/MethodLength,Metrics/CyclomaticComplexity plugins/$1;
+    bundle exec slim-lint -c plugins/$1/.slim-lint.yml plugins/$1;
+    }
+function lint_rc_changed { 
+    git --work-tree=plugins/$1 --git-dir plugins/$1/.git ls-files -m --others --exclude-standard | grep '\.rb$' | xargs printf -- "plugins/$1/%s\n" | xargs bundle exec rubocop -R -fs -P 
+    git --work-tree=plugins/$1 --git-dir plugins/$1/.git ls-files -m --others --exclude-standard | grep '\.slim$' | xargs printf -- "plugins/$1/%s\n" | xargs bundle exec slim-lint -c plugins/$1/.slim-lint.yml
+}
+function lint_fix_rc_changed { 
+    git --work-tree=plugins/$1 --git-dir plugins/$1/.git ls-files -m --others --exclude-standard | grep '\.rb$' | xargs printf -- "plugins/$1/%s\n" | xargs bundle exec rubocop -a
+    bundle exec slim-lint -c plugins/$1/.slim-lint.yml plugins/$1;
+}
 
 
 ### Nix
