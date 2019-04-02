@@ -24,3 +24,5 @@
 	interactive = true
 [core]
 	excludesfile = ~/.gitignore_global
+[rebase]
+	instructionFormat = %at <%ae> %s
