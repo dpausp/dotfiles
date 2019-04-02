@@ -1,6 +1,9 @@
 source ~/.keychain/`hostname`-sh &> /dev/null
 source ~/.dotfiles/z.sh
 
+export FZF_DEFAULT_COMMAND='fd --type file'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 ### zsh settings
 
 bindkey -M vicmd '^R' history-incremental-search-backward
@@ -124,6 +127,7 @@ alias svi="sudo -E vim"
 ### global aliases
 
 alias -g X="| tr -d '\n' | xclip"
+alias -g F="| fzf"
 
 command -v thefuck && eval $(thefuck --alias)
 
