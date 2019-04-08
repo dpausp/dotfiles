@@ -170,10 +170,16 @@ in pkgs: {
       })
       ;
 
-      all_pkgs = pkgs.buildEnv {
+      all_pkgs_amorphis = pkgs.buildEnv {
         name = "all_pkgs";
         pathsToLink = [ "/bin" "/share" ];
-        paths = (commonPkgs pkgs) ++ (desktopPkgs pkgs) ++ (develPkgs pkgs);
+        paths = (commonPkgs pkgs) ++ (desktopPkgs pkgs) ++ (develPkgs pkgs) ++ ( with pkgs; [
+          gitAndTools.git-annex
+          libreoffice
+          pandoc
+          sshfs-fuse
+          wirelesstools 
+        ]);
       };
 
       all_pkgs_mac = pkgs.buildEnv {
