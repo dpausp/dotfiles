@@ -92,16 +92,12 @@ fi
 
 ### my distribution-dependent config
 
-if [ -f ~/.my_zshrc_debian ]; then
-    . ~/.my_zshrc_debian
-fi
-
-if [ -f ~/.my_zshrc_gentoo ]; then
-    . ~/.my_zshrc_gentoo
-fi
-
 if [ -f ~/.my_zshrc_nixos ]; then
     . ~/.my_zshrc_nixos
+fi
+
+if [ -f ~/.my_zshrc_macosx ]; then
+    . ~/.my_zshrc_macosx
 fi
 
 . ~/.nix-profile/share/fzf/completion.zsh

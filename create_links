@@ -1,28 +1,25 @@
 #!/usr/bin/env zsh
 
-ln -sf .dotfiles/.gtkrc-2.0.mine
 ln -sf .dotfiles/.tmux.conf
-ln -sf .dotfiles/.scripts
 ln -sf .dotfiles/.zshrc
 ln -sf .dotfiles/.gitconfig
 ln -sf .dotfiles/.my_zshrc_common
 ln -sf .dotfiles/.vimrc
+ln -sf .dotfiles/.scripts
 ln -sf .dotfiles/.vim
 ln -sf .dotfiles/.tmux
 ln -sf .dotfiles/.psqlrc
 ln -sf .dotfiles/.gitignore_global
 
-if [ "$1" = "gentoo" ]; then
-    ln -sf .dotfiles/.zshenv
-    ln -sf .dotfiles/.my_zshrc_gentoo
-elif [ "$1" = "debian" ]; then
-    ln -sf .dotfiles/.zshenv
-    ln -sf .dotfiles/.my_zshrc_debian
-    ln -sf .dotfiles/.inputrc_debian .inputrc
-elif [ "$1" = "nixos" ]; then
+if [ "$1" = "nixos" ]; then
+    ln -sf .dotfiles/.scripts
+    ln -sf .dotfiles/.gtkrc-2.0.mine
     ln -sf .dotfiles/.my_zshrc_nixos
     ln -sf .dotfiles/.nixpkgs
     ln -sf .dotfiles/.zshenv_nixos .zshenv
+elif [ "$1" = "macosx" ]; then
+    ln -sf .dotfiles/.my_zshrc_macosx
+    ln -sf .dotfiles/.nixpkgs
 else
     echo "unknown?!"
 fi
