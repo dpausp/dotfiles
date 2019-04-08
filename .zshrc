@@ -104,3 +104,5 @@ if [ -f ~/.my_zshrc_nixos ]; then
     . ~/.my_zshrc_nixos
 fi
 
+. ~/.nix-profile/share/fzf/completion.zsh
+. ~/.nix-profile/share/fzf/key-bindings.zsh
