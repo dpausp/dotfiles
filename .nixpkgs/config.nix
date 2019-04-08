@@ -14,8 +14,8 @@ let
     pass
     python37Packages.python
     qrencode
+    ripgrep
     sharutils
-    silver-searcher
     sshuttle
     tree
     unison
