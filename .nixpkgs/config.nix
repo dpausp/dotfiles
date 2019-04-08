@@ -71,13 +71,11 @@ let
     zeal
   ];
 
-  develPkgs = pkgs: with pkgs; [
+  develAllPkgs = pkgs: with pkgs; [
     cloc
     cookiecutter
     dhall
     dhall-json
-    fileschanged
-    git
     graphviz
     hexedit
     html-tidy
@@ -93,11 +91,16 @@ let
     sqlite
     telnet
     universal-ctags
-    vscode
     wrk
   ];
   
+  develPkgs = pkgs: ( develAllPkgs pkgs ) ++ (with pkgs; [
+    fileschanged
+    git
+    vscode
+  ]);
 
+  develMacPkgs = pkgs: develAllPkgs pkgs;
 
   telepathyPkgs = pkgs: with pkgs; [
     kde4.telepathy.accounts_kcm
@@ -144,6 +147,12 @@ in pkgs: {
          flags = ["python"];
       });
 
+      myVim = pkgs.vim_configurable.customize {
+        name = "vim";
+        vimrcConfig.packages.thisPackage.start = [ vimPlugins.vim-nix vimPlugins.elm-vim ];
+        vimrcConfig.customRC = builtins.readFile ../.dotfiles/.vimrc;
+      };
+
       when-changed = pkgs.python37Packages.buildPythonPackage {
         name = "when-changed-0.3.0";
         doCheck = false;
@@ -165,6 +174,12 @@ in pkgs: {
         name = "all_pkgs";
         pathsToLink = [ "/bin" "/share" ];
         paths = (commonPkgs pkgs) ++ (desktopPkgs pkgs) ++ (develPkgs pkgs);
+      };
+
+      all_pkgs_mac = pkgs.buildEnv {
+        name = "all_pkgs";
+        pathsToLink = [ "/bin" "/share" ];
+        paths = (commonPkgs pkgs) ++ (develMacPkgs pkgs);
       };
     };
 }
