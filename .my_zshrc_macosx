@@ -1,2 +1,3 @@
 alias vi=vim
 unalias ls
+bindkey -M viins '^[a' backward-kill-word
