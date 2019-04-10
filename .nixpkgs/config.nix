@@ -185,7 +185,12 @@ in pkgs: {
       all_pkgs_mac = pkgs.buildEnv {
         name = "all_pkgs";
         pathsToLink = [ "/bin" "/share" ];
-        paths = (commonPkgs pkgs) ++ (develMacPkgs pkgs);
+        paths = (commonPkgs pkgs) ++ (develMacPkgs pkgs) ++ ( with pkgs; [
+          git
+          ( haskell.lib.dontCheck gitAndTools.git-annex )
+          pandoc
+          tmux
+        ]);
       };
     };
 }
