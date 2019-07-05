@@ -1,3 +1,4 @@
 alias vi=vim
 unalias ls
 bindkey -M viins '\e\C-h' backward-kill-word
+export PATH="$PATH:/usr/local/bin"
