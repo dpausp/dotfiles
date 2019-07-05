@@ -157,7 +157,7 @@ command -v thefuck && eval $(thefuck --alias)
 eval "$RUN"
 
 # connect via SSH and attach / create tmux session. Detaching the session also disconnects.
-function ssht () { ssh -t $@ "tmux attach || tmux new" }
+function ssht () { ssh -t $@ "tmux -CC attach || tmux -CC new" }
 
 # first attempt at a personal knowledge base ;)
 function tip() { psql -c "INSERT INTO selftweet (id, content) VALUES('`uuidgen`', '@tip $*')" }
