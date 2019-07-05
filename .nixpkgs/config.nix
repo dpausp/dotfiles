@@ -81,6 +81,7 @@ let
     html-tidy
     httpie
     jq
+    mercurial
     nix-prefetch-scripts
     nodePackages.grunt-cli
     patchelf
