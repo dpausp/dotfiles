@@ -103,16 +103,6 @@ let
 
   develMacPkgs = pkgs: develAllPkgs pkgs;
 
-  telepathyPkgs = pkgs: with pkgs; [
-    kde4.telepathy.accounts_kcm
-    kde4.telepathy.auth_handler
-    kde4.telepathy.contact_list
-    kde4.telepathy.desktop_applets
-    kde4.telepathy.text_ui
-    telepathy_haze
-    telepathy_gabble
-  ];
-
 in pkgs: {
     allowUnfree = true;
 
