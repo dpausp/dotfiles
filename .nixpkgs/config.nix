@@ -169,6 +169,8 @@ in pkgs: {
         ]);
       };
 
+      all_pkgs_mayan = all_pkgs_amorphis;
+
       all_pkgs_mac = pkgs.buildEnv {
         name = "all_pkgs";
         pathsToLink = [ "/bin" "/share" ];
