@@ -159,7 +159,7 @@ in pkgs: {
 
       all_pkgs_amorphis = pkgs.buildEnv {
         name = "all_pkgs";
-        pathsToLink = [ "/bin" "/share" ];
+        pathsToLink = [ "/bin" "/share" "/lib" ];
         paths = (commonPkgs pkgs) ++ (desktopPkgs pkgs) ++ (develPkgs pkgs) ++ ( with pkgs; [
           gitAndTools.git-annex
           libreoffice
