@@ -172,3 +172,6 @@ function jat { jq '.' -C < "$1" | bat }
 
 # interactively find a PID from verbose ps output and print it
 function fpid { ps aux | fzf -m -q "$@" | awk '{ print $2 }' }
+
+# nix search with json output and jq filtering, can be piped to jid for interactive filtering
+function nis() { search=$1; shift; nix search --json $search | jq "$@" }
