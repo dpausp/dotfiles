@@ -41,7 +41,6 @@ let
     clearlooks-phenix
     chromium
     dmenu
-    eclipses.eclipse-platform
     digikam
     fira-code
     fira-mono
