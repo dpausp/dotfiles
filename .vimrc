@@ -114,6 +114,11 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 nmap <silent> <leader>/ :nohlsearch<CR>
 
+" diff mode
+" move to previous change
+:nnoremap <expr> <C-u> &diff ? '[c' : '<C-u>'
+" move to next change
+:nnoremap <expr> <C-i> &diff ? ']c' : '<C-i>'
 
 " NERDTree
 " let the NERDTree ignore some file type (generated stuff and the like)
