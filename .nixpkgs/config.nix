@@ -57,7 +57,6 @@ let
     okular
     qutebrowser
     pdftk
-    pgadmin
     simplescreenrecorder
     spectacle
     sqlitebrowser
@@ -75,7 +74,6 @@ let
     cloc
     cookiecutter
     dhall
-    dhall-json
     graphviz
     hexedit
     html-tidy
@@ -85,8 +83,6 @@ let
     nix-prefetch-scripts
     nodePackages.grunt-cli
     patchelf
-    # doesn't compile atm
-    #haskellPackages.postgrest
     redis
     sassc
     sqlite
