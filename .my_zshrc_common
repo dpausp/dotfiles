@@ -72,14 +72,7 @@ alias gitaww="git diff -w --no-color | git apply --cached --ignore-whitespace" #
 
 ### git annex
 
-alias add="git annex add"
-alias amv="git annex move"
-alias adrop="git annex drop"
-alias acp="git annex copy"
-alias async="git annex sync"
-alias aget="git annex get"
-alias awhereis="git annex whereis"
-
+alias x="git annex"
 
 ### docker
 
