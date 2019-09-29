@@ -121,3 +121,6 @@
 [submodule ".vim/bundle/dhall-vim"]
 	path = .vim/bundle/dhall-vim
 	url = https://github.com/vmchale/dhall-vim
+[submodule ".vim/bundle/vim-solarized8"]
+	path = .vim/bundle/vim-solarized8
+	url = https://github.com/lifepillar/vim-solarized8

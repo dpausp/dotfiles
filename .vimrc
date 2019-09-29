@@ -58,7 +58,7 @@ autocmd Filetype logstash set ts=4 sts=4 sw=4
 autocmd Filetype nix set ts=2 sts=2 sw=2
 autocmd Filetype elm set ts=4 sts=4 sw=4
 
-colorscheme elflord
+colorscheme solarized8
 
 au BufRead,BufNewFile *.md  set filetype=markdown
 au BufRead,BufNewFile *.mdown  set filetype=markdown
