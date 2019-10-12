@@ -139,20 +139,11 @@ in pkgs: {
         vimrcConfig.customRC = builtins.readFile ../.dotfiles/.vimrc;
       };
 
-      when-changed = pkgs.python37Packages.buildPythonPackage {
-        name = "when-changed-0.3.0";
-        doCheck = false;
-        propagatedBuildInputs = with pkgs.python37Packages; [watchdog];
-        src = fetchurl {
-          url = "https://pypi.python.org/packages/83/33/80d220730dddda0cc99eac3c76409d9d8a60a799d0e0fcc6e010c14c2834/when-changed-0.3.0.tar.gz";
-          sha256 = "98bb1b943e5936bcd60bed8189f7d7494b52095dc92d2a804be49603b6b9a372";
-        };
-      };
-
       httpbin = pkgs.python37Packages.httpbin.overrideAttrs(oldAttrs: {
         patchPhase = ''
           sed -i "/os.mkdir('static')/d" httpbin/core.py
         '';
+        propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [ pkgs.python37Packages.setuptools ];
       })
       ;
 
