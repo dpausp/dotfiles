@@ -9,3 +9,7 @@ rwhich() {
         echo $WHICH
     fi
 }
+
+nish() { 
+    nix-shell -p "$@" --run zsh 
+}
