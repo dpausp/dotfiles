@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 ssid=`iwgetid --scheme`
-active_connection=`nmcli -t -f name connection show --active | head -n1`
+active_connection=`nmcli -t connection show --active | grep wireless | cut -d: -f 1 | head -n1`
 zone=`nmcli -t -f connection.zone connection show $active_connection | awk -F':' '{ print $2 }'`
 echo ssid $ssid
 echo zone $zone

@@ -1,4 +1,4 @@
-let 
+let
   commonPkgs = pkgs: with pkgs; [
     apg
     bat
@@ -24,8 +24,8 @@ let
     zip
   ];
 
-  desktopPkgs = pkgs: with pkgs; 
-  let 
+  desktopPkgs = pkgs: with pkgs;
+  let
     mumble = pkgs.mumble.override {
       speechdSupport = true;
     };
@@ -89,7 +89,7 @@ let
     universal-ctags
     wrk
   ];
-  
+
   develPkgs = pkgs: ( develAllPkgs pkgs ) ++ (with pkgs; [
     fileschanged
     git
@@ -121,7 +121,7 @@ in pkgs: {
       vim_configurable_nox = vimUtils.makeCustomizable (pkgs.vim_configurable.override {
          libX11 = null;
          libXext = null;
-         libSM = null; 
+         libSM = null;
          libXpm = null;
          libXt = null;
          libXaw = null;
@@ -147,6 +147,21 @@ in pkgs: {
       })
       ;
 
+      visidata = pkgs.visidata.overrideAttrs(oldAttrs: rec {
+
+        version = "2.1dev";
+        name = "visidata-${version}";
+
+        src = pkgs.fetchFromGitHub {
+          owner = "saulpw";
+          repo = "visidata";
+          rev = "652766feb231dd459bf0eccfa7d65e542bf23b14";
+          sha256 = "144pkn77gpzarkbdqb2wfz5m9p3cx2pqmbf2ngcy8ac6zx4xvfdn";
+        };
+
+        propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [ pkgs.python37Packages.setuptools ];
+      });
+
       all_pkgs_amorphis = pkgs.buildEnv {
         name = "all_pkgs";
         pathsToLink = [ "/bin" "/share" "/lib" ];
@@ -155,7 +170,7 @@ in pkgs: {
           libreoffice
           pandoc
           sshfs-fuse
-          wirelesstools 
+          wirelesstools
         ]);
       };
 
