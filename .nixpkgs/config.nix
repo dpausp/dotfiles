@@ -3,6 +3,7 @@ let
     apg
     bat
     bc
+    exa
     fd
     file
     fzf

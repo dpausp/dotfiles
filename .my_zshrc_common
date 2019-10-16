@@ -138,7 +138,8 @@ alias m="mount"
 alias pstat="python -mpstats"
 alias shm="cd /dev/shm"
 alias py=python
-alias ll="ls -lahL"
+alias ll="exa -l"
+alias la="exa -la"
 alias fu="fuck"
 alias svi="sudo -E vim"
 
