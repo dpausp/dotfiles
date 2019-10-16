@@ -73,6 +73,11 @@ alias gitaww="git diff -w --no-color | git apply --cached --ignore-whitespace" #
 ### git annex
 
 alias x="git annex"
+alias xs="x sync vdr belakor && (cd ~/annex/belakor; x sync)"
+function xg {
+    git annex get "$@"
+    git annex copy --to belakor "$@"
+}
 
 ### docker
 
