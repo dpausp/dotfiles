@@ -1,5 +1,21 @@
 let
-  commonPkgs = pkgs: with pkgs; [
+  commonPkgs = pkgs: with pkgs; 
+  let
+    visidata = pkgs.visidata.overrideAttrs(oldAttrs: rec {
+      version = "2.1dev";
+      name = "visidata-${version}";
+
+      src = pkgs.fetchFromGitHub {
+        owner = "saulpw";
+        repo = "visidata";
+        rev = "667d570024b0d259c7635be3978e186d1308200f";
+        sha256 = "0lrxfv25383hivznxhd0bd5mx8wgy810ldlkzzk7010s0m1yx0x7";
+      };
+
+      propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [ pkgs.python37Packages.setuptools ];
+    });
+
+  in [
     apg
     bat
     bc
@@ -10,6 +26,7 @@ let
     gnupg
     ipcalc
     keychain
+    magic-wormhole
     nix-index
     openssl_1_1
     pass
@@ -22,6 +39,7 @@ let
     unison
     unrar
     unzip
+    visidata
     zip
   ];
 
@@ -134,12 +152,6 @@ in pkgs: {
          flags = ["python"];
       });
 
-      myVim = pkgs.vim_configurable.customize {
-        name = "vim";
-        vimrcConfig.packages.thisPackage.start = [ vimPlugins.vim-nix vimPlugins.elm-vim ];
-        vimrcConfig.customRC = builtins.readFile ../.dotfiles/.vimrc;
-      };
-
       httpbin = pkgs.python37Packages.httpbin.overrideAttrs(oldAttrs: {
         patchPhase = ''
           sed -i "/os.mkdir('static')/d" httpbin/core.py
@@ -148,20 +160,7 @@ in pkgs: {
       })
       ;
 
-      visidata = pkgs.visidata.overrideAttrs(oldAttrs: rec {
-
-        version = "2.1dev";
-        name = "visidata-${version}";
-
-        src = pkgs.fetchFromGitHub {
-          owner = "saulpw";
-          repo = "visidata";
-          rev = "652766feb231dd459bf0eccfa7d65e542bf23b14";
-          sha256 = "144pkn77gpzarkbdqb2wfz5m9p3cx2pqmbf2ngcy8ac6zx4xvfdn";
-        };
-
-        propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [ pkgs.python37Packages.setuptools ];
-      });
+      pip-tools = pkgs.callPackage ./pip-tools.nix {};
 
       all_pkgs_amorphis = pkgs.buildEnv {
         name = "all_pkgs";
