@@ -142,6 +142,7 @@ alias ll="exa -l"
 alias la="exa -la"
 alias fu="fuck"
 alias svi="sudo -E vim"
+alias run="zsh .runrc"
 
 
 ### global aliases
