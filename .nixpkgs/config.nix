@@ -22,11 +22,13 @@ let
     exa
     fd
     file
+    thefuck
     fzf
     gnupg
     ipcalc
     keychain
     magic-wormhole
+    mosh
     nix-index
     openssl_1_1
     pass
