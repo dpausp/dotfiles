@@ -1,10 +1,11 @@
 #!/usr/bin/env sh
 ssid=`iwgetid --scheme`
-active_connection=`nmcli -t connection show --active | grep wireless | cut -d: -f 1 | head -n1`
-zone=`nmcli -t -f connection.zone connection show $active_connection | awk -F':' '{ print $2 }'`
+active_connection=`nmcli -t connection show --active | cut -d: -f 1 | head -n1`
+echo $active_connection
+zone=`nmcli -t connection show $active_connection | grep connection.zone | awk -F':' '{ print $2 }' | head -n1`
 echo ssid $ssid
-echo zone $zone
-if [[ $zone = "home" ]]; then
+echo zone "$zone"
+if [[ $zone == "home" ]]; then
     echo "at home!"
     exit
 else
