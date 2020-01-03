@@ -34,11 +34,11 @@ export KEYTIMEOUT=2
 
 bindkey -M vicmd '\ef'   forward-word                      # Alt-f
 bindkey -M vicmd '\eb'   backward-word                     # Alt-b
-bindkey -M vicmd '\ed'   kill-word         # Alt-d                    
+bindkey -M vicmd '\ed'   kill-word         # Alt-d
 
 bindkey -M viins '\ef'   forward-word      # Alt-f
 bindkey -M viins '\eb'   backward-word     # Alt-b
-bindkey -M viins '\ed'   kill-word         # Alt-d                    
+bindkey -M viins '\ed'   kill-word         # Alt-d
 
 # disable hosts completion because I use /etc/hosts to block many unwanted sites that would appear as completions without that setting
 zstyle ':completion:*:*:*' hosts off
@@ -98,18 +98,18 @@ alias mrspec="bundle exec mrspec"
 alias check_rc="bundle exec rubocop -R -fs -P"
 
 function test_plugin { mrspec plugins/$1/test/; shift; "$@" }
-function slim_lint_plugin { 
+function slim_lint_plugin {
     bundle exec slim-lint -c plugins/$1/.slim-lint.yml plugins/$1;
     }
-function lint_plugin { 
+function lint_plugin {
     bundle exec rubocop -R -fs -P --except Metrics/MethodLength,Metrics/CyclomaticComplexity plugins/$1;
     bundle exec slim-lint -c plugins/$1/.slim-lint.yml plugins/$1;
     }
-function lint_rc_changed { 
-    git --work-tree=plugins/$1 --git-dir plugins/$1/.git ls-files -m --others --exclude-standard | grep '\.rb$' | xargs printf -- "plugins/$1/%s\n" | xargs bundle exec rubocop -R -fs -P 
+function lint_rc_changed {
+    git --work-tree=plugins/$1 --git-dir plugins/$1/.git ls-files -m --others --exclude-standard | grep '\.rb$' | xargs printf -- "plugins/$1/%s\n" | xargs bundle exec rubocop -R -fs -P
     git --work-tree=plugins/$1 --git-dir plugins/$1/.git ls-files -m --others --exclude-standard | grep '\.slim$' | xargs printf -- "plugins/$1/%s\n" | xargs bundle exec slim-lint -c plugins/$1/.slim-lint.yml
 }
-function lint_fix_rc_changed { 
+function lint_fix_rc_changed {
     git --work-tree=plugins/$1 --git-dir plugins/$1/.git ls-files -m --others --exclude-standard | grep '\.rb$' | xargs printf -- "plugins/$1/%s\n" | xargs bundle exec rubocop -a
     bundle exec slim-lint -c plugins/$1/.slim-lint.yml plugins/$1;
 }
@@ -122,7 +122,7 @@ function update-persistent-nix-shell() {
 }
 
 
-### other 
+### other
 
 alias pcwd="source ~/.scripts/pcwd"
 alias newest_file="ls -1t | head -n1"
@@ -152,7 +152,7 @@ alias -g F="| fzf"
 
 command -v thefuck && eval $(thefuck --alias)
 
-# run commands via SSH like: RUN="program opt1" zsh 
+# run commands via SSH like: RUN="program opt1" zsh
 # # http://superuser.com/a/790681
 eval "$RUN"
 
@@ -164,7 +164,7 @@ function tip() { psql -c "INSERT INTO selftweet (id, content) VALUES('`uuidgen`'
 function sts() { psql -c "select * from selftweet where to_tsvector('german', content) @@ plainto_tsquery('german', '$*');" }
 
 # build a single nix package from my personal collection dir
-function nb() { 
+function nb() {
     PKG=$1
 	shift
 	nix-build --arg pkg $PKG "$@"
