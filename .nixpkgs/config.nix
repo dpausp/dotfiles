@@ -122,16 +122,15 @@ let
 in pkgs: {
     allowUnfree = true;
 
-    vim = { netbeans = false;
-
-            tcl = false;
-            ftNix = false;
-            python = true;
-          };
-
-    packageOverrides = pkgs : with pkgs;
-    rec {
+    packageOverrides = pkgs: with pkgs;
+    let
       vim_configurable_nox = vimUtils.makeCustomizable (pkgs.vim_configurable.override {
+         config = {
+           netbeans = false;
+           vim = {
+             gui = "no";
+           };
+         };
          libX11 = null;
          libXext = null;
          libSM = null;
@@ -141,10 +140,15 @@ in pkgs: {
          libXau = null;
          libXmu = null;
          libICE = null;
-         gtk = null;
-         gui = "no";
-         flags = ["python"];
+         gtk2-x11 = null;
+         gtk3-x11 = null;
       });
+
+    in rec {
+
+      serverProfile = (commonPkgs pkgs) ++ [ vim_configurable_nox ];
+
+      inherit vim_configurable_nox;
 
       httpbin = pkgs.python37Packages.httpbin.overrideAttrs(oldAttrs: {
         patchPhase = ''
