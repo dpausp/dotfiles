@@ -1,5 +1,5 @@
 let
-  commonPkgs = pkgs: with pkgs; 
+  commonPkgs = pkgs: with pkgs;
   let
     visidata = pkgs.visidata.overrideAttrs(oldAttrs: rec {
       version = "2.1dev";
@@ -33,7 +33,6 @@ let
     openssl_1_1
     pass
     python37Packages.python
-    qrencode
     ripgrep
     sharutils
     sshuttle
@@ -88,6 +87,7 @@ let
     xsane
     xclip
     zeal
+    zoom-us
   ];
 
   develAllPkgs = pkgs: with pkgs; [
