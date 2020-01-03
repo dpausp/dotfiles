@@ -129,14 +129,6 @@ in pkgs: {
             python = true;
           };
 
-    firefox = {
-      icedtea = true;
-    };
-
-    chromium = {
-       enablePepperFlash = true; # Chromium's non-NSAPI alternative to Adobe Flash
-    };
-
     packageOverrides = pkgs : with pkgs;
     rec {
       vim_configurable_nox = vimUtils.makeCustomizable (pkgs.vim_configurable.override {
