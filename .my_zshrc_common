@@ -48,10 +48,6 @@ export LC_MESSAGES=C
 export EDITOR=vim
 export GIT_PAGER="vim -R -"
 
-### remove default aliases
-
-unalias d
-
 ### aliases and functions
 
 ### git
@@ -182,3 +178,16 @@ function fpid { ps aux | fzf -m -q "$@" | awk '{ print $2 }' }
 
 # nix search with json output and jq filtering, can be piped to jid for interactive filtering
 function nis() { search=$1; shift; nix search --json $search | jq "$@" }
+
+rwhich() {
+    WHICH=`which $1`
+    if [[ $? == 0 ]] then 
+        readlink -f $WHICH
+    else
+        echo $WHICH
+    fi
+}
+
+nish() { 
+    nix-shell -p "$@" --run zsh 
+}
