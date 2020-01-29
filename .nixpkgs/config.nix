@@ -40,7 +40,6 @@ let
     unison
     unrar
     unzip
-    visidata
     zip
   ];
 
