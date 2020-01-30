@@ -38,7 +38,6 @@ let
     sshuttle
     tree
     unison
-    unrar
     unzip
     zip
   ];
