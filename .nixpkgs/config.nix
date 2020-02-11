@@ -36,6 +36,7 @@ let
     ripgrep
     sharutils
     sshuttle
+    tmux
     tree
     unison
     unzip
