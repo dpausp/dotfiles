@@ -1,24 +1,11 @@
 let
   commonPkgs = pkgs: with pkgs;
   let
-    visidata = pkgs.visidata.overrideAttrs(oldAttrs: rec {
-      version = "2.1dev";
-      name = "visidata-${version}";
-
-      src = pkgs.fetchFromGitHub {
-        owner = "saulpw";
-        repo = "visidata";
-        rev = "667d570024b0d259c7635be3978e186d1308200f";
-        sha256 = "0lrxfv25383hivznxhd0bd5mx8wgy810ldlkzzk7010s0m1yx0x7";
-      };
-
-      propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [ pkgs.python37Packages.setuptools ];
-    });
-
   in [
     apg
     bat
     bc
+    entr
     exa
     fd
     file
@@ -28,6 +15,7 @@ let
     ipcalc
     keychain
     magic-wormhole
+    mailutils
     mosh
     nix-index
     openssl_1_1
@@ -70,6 +58,7 @@ let
     gtk_engines
     img2pdf
     kdeApplications.kwalletmanager
+    korganizer
     mumble
     myVim
     okular
@@ -86,7 +75,6 @@ let
     xsane
     xclip
     zeal
-    zoom-us
   ];
 
   develAllPkgs = pkgs: with pkgs; [
@@ -98,15 +86,19 @@ let
     html-tidy
     httpie
     jq
+    lorri
     mercurial
+    nixfmt
     nix-prefetch-scripts
     nodePackages.grunt-cli
     patchelf
     redis
+    remarshal
     sassc
     sqlite
     telnet
     universal-ctags
+    vagrant
     wrk
   ];
 
@@ -157,6 +149,20 @@ in pkgs: {
       })
       ;
 
+      visidata = pkgs.visidata.overrideAttrs(oldAttrs: rec {
+        version = "2.-3";
+        name = "visidata-${version}";
+
+        src = pkgs.fetchFromGitHub {
+          owner = "saulpw";
+          repo = "visidata";
+          rev = "a4f3dc5e317c476d1958194eecd5bf9071ee3cb9";
+          sha256 = "1m7lya3xbzn7b4w6lm8463kq7yb9x5yisahhlw8ra1s0j6wck8a3";
+        };
+
+      propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [ pkgs.python37Packages.setuptools ];
+    });
+
       pip-tools = pkgs.callPackage ./pip-tools.nix {};
 
       all_pkgs_amorphis = pkgs.buildEnv {
@@ -164,8 +170,11 @@ in pkgs: {
         pathsToLink = [ "/bin" "/share" "/lib" ];
         paths = (commonPkgs pkgs) ++ (desktopPkgs pkgs) ++ (develPkgs pkgs) ++ ( with pkgs; [
           gitAndTools.git-annex
+          kubectl
           libreoffice
+          nixops
           pandoc
+          pgcli
           sshfs-fuse
           wirelesstools
         ]);
