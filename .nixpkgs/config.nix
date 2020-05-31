@@ -192,5 +192,7 @@ in pkgs: {
           tmux
         ]);
       };
+
+      all_pkgs_vader = all_pkgs_amorphis;
     };
 }
