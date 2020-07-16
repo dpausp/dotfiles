@@ -56,6 +56,7 @@ alias gita="git add"
 alias gitd="git diff"
 alias gitdc="git diff --cached"
 alias gitl="git log"
+alias gitls='git log --pretty=format:"%H %as %s (%an)"'
 alias gitc="git commit"
 alias gits="git status"
 alias gitb="git bisect"
