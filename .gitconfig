@@ -27,3 +27,13 @@
 	excludesfile = ~/.gitignore_global
 [rebase]
 	instructionFormat = %at <%ae> %s
+[protocol "http"]
+allow = never
+[protocol "git"]
+allow = never
+[fetch]
+        fsckObjects = true
+[transfer]
+        fsckObjects = true
+[receive]
+        fsckObjects = true
