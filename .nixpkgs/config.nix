@@ -163,8 +163,6 @@ in pkgs: {
       propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [ pkgs.python37Packages.setuptools ];
     });
 
-      pip-tools = pkgs.callPackage ./pip-tools.nix {};
-
       all_pkgs_amorphis = pkgs.buildEnv {
         name = "all_pkgs";
         pathsToLink = [ "/bin" "/share" "/lib" ];
