@@ -143,28 +143,6 @@ in pkgs: {
 
       inherit vim_configurable_nox;
 
-      httpbin = pkgs.python37Packages.httpbin.overrideAttrs(oldAttrs: {
-        patchPhase = ''
-          sed -i "/os.mkdir('static')/d" httpbin/core.py
-        '';
-        propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [ pkgs.python37Packages.setuptools ];
-      })
-      ;
-
-      visidata = pkgs.visidata.overrideAttrs(oldAttrs: rec {
-        version = "2.-3";
-        name = "visidata-${version}";
-
-        src = pkgs.fetchFromGitHub {
-          owner = "saulpw";
-          repo = "visidata";
-          rev = "a4f3dc5e317c476d1958194eecd5bf9071ee3cb9";
-          sha256 = "1m7lya3xbzn7b4w6lm8463kq7yb9x5yisahhlw8ra1s0j6wck8a3";
-        };
-
-      propagatedBuildInputs = oldAttrs.propagatedBuildInputs ++ [ pkgs.python37Packages.setuptools ];
-    });
-
       all_pkgs_amorphis = pkgs.buildEnv {
         name = "all_pkgs";
         pathsToLink = [ "/bin" "/share" "/lib" ];
