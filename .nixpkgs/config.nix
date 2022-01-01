@@ -2,6 +2,7 @@ let
   commonPkgs = pkgs: with pkgs;
   let
   in [
+    amber
     apg
     bat
     bc
@@ -18,6 +19,7 @@ let
     mailutils
     mosh
     nix-index
+    ngrok
     openssl_1_1
     pass
     python37Packages.python
