@@ -182,13 +182,22 @@ function nis() { search=$1; shift; nix search --json $search | jq "$@" }
 
 rwhich() {
     WHICH=`which $1`
-    if [[ $? == 0 ]] then 
+    if [[ $? == 0 ]] then
         readlink -f $WHICH
     else
         echo $WHICH
     fi
 }
 
-nish() { 
-    nix-shell -p "$@" --run zsh 
+nish() {
+    nix-shell -p "$@" --run zsh
+}
+
+
+out() {
+    zsh .out-syncrc "$@"
+}
+
+in() {
+    zsh .in-syncrc "$@"
 }
