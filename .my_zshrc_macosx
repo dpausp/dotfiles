@@ -6,3 +6,7 @@ alias fc-copy-nixpkgs-version="jq -r '.nixpkgs.rev' < versions.json | tr -d '\n'
 unalias ls
 bindkey -M viins '\e\C-h' backward-kill-word
 export PATH="$PATH:/usr/local/bin"
+export NIX_PATH='nixpkgs=/nix/var/nix/profiles/per-user/ts/channels/nixpkgs:/nix/var/nix/profiles/per-user/ts/channels'
+
+if [ -e /Users/ts/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/ts/.nix-profile/etc/profile.d/nix.sh; fi
+eval "$(/Users/ts/.nix-profile/bin/direnv hook zsh)"
