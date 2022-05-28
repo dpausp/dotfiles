@@ -1,4 +1,8 @@
 alias vi=vim
+alias git-copy-commit-id="git rev-parse HEAD | tr -d '\n' | pbcopy"
+alias fc-copy-nixpkgs-version="jq -r '.nixpkgs.rev' < versions.json | tr -d '\n' | pbcopy"
+
+
 unalias ls
 bindkey -M viins '\e\C-h' backward-kill-word
 export PATH="$PATH:/usr/local/bin"
