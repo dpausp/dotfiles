@@ -69,7 +69,7 @@ alias gitaww="git diff -w --no-color | git apply --cached --ignore-whitespace" #
 ### git annex
 
 alias x="git annex"
-alias xs="x sync vdr belakor && (cd ~/annex/belakor; x sync)"
+alias xs="git push belakor master"
 function xg {
     git annex get "$@"
     git annex copy --to belakor "$@"
@@ -126,6 +126,9 @@ alias la="exa -la"
 alias fu="fuck"
 alias svi="sudo -E vim"
 alias run="zsh .runrc"
+alias debug="zsh .debugrc"
+alias hm=home-manager
+alias br=broot
 
 
 ### global aliases
