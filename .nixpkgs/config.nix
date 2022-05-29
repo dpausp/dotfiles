@@ -16,19 +16,17 @@ let
     ipcalc
     keychain
     magic-wormhole
-    mailutils
     mosh
     nix-index
     ngrok
-    openssl_1_1
+    openssl
     pass
     python310Packages.python
     ripgrep
     sharutils
-    sshuttle
+    socat
     tmux
     tree
-    unison
     unzip
     zip
   ];
@@ -66,7 +64,7 @@ let
   let
     myVim = pkgs.vim_configurable.customize {
       name = "vim";
-      vimrcConfig.packages.thisPackage.start = [ vimPlugins.vim-nix vimPlugins.elm-vim ];
+      vimrcConfig.packages.thisPackage.start = [ vimPlugins.vim-nix ];
       vimrcConfig.customRC = builtins.readFile ../.dotfiles/.vimrc;
     };
 
@@ -90,6 +88,7 @@ let
     okular
     pdftk
     simple-scan
+    pre-commit
     simplescreenrecorder
     spectacle
     sqlitebrowser
@@ -110,9 +109,13 @@ let
     hexedit
     html-tidy
     httpie
+    inetutils
     jq
     lorri
     nixfmt
+    niv
+    nix-update
+    nix-prefetch
     nix-prefetch-scripts
     nix-prefetch-github
     patchelf
@@ -122,15 +125,13 @@ let
     remarshal
     sassc
     sqlite
-    telnet
     universal-ctags
+    vagrant
     wrk
   ];
 
   develPkgs = pkgs: ( develAllPkgs pkgs ) ++ (with pkgs; [
-    fileschanged
     git
-    vscode
   ]);
 
   develMacPkgs = pkgs: develAllPkgs pkgs;
@@ -191,6 +192,7 @@ in pkgs: {
           ( haskell.lib.dontCheck gitAndTools.git-annex )
           pandoc
           tmux
+
         ]);
       };
 

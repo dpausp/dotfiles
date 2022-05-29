@@ -5,3 +5,6 @@
 .settings
 .vscode
 .runrc
+.DS_Store
+.in-syncrc
+.out-syncrc

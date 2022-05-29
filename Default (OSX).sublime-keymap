@@ -1,0 +1,3 @@
+[
+	{ "keys": ["f1"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
+]

@@ -65,6 +65,10 @@ alias grm="git rm"
 alias gms="git merge --squash"
 
 alias gitaww="git diff -w --no-color | git apply --cached --ignore-whitespace" # add changes, ignore whitespace
+function git-push-branch { git push -u origin $(git rev-parse --abbrev-ref HEAD) }
+
+
+
 
 ### git annex
 
@@ -169,13 +173,22 @@ function nis() { search=$1; shift; nix search --json $search | jq "$@" }
 
 rwhich() {
     WHICH=`which $1`
-    if [[ $? == 0 ]] then 
+    if [[ $? == 0 ]] then
         readlink -f $WHICH
     else
         echo $WHICH
     fi
 }
 
-nish() { 
-    nix-shell -p "$@" --run zsh 
+nish() {
+    nix-shell -p "$@" --run zsh
+}
+
+
+out() {
+    zsh .out-syncrc "$@"
+}
+
+in() {
+    zsh .in-syncrc "$@"
 }
