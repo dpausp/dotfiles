@@ -22,7 +22,7 @@ let
     ngrok
     openssl_1_1
     pass
-    python37Packages.python
+    python310Packages.python
     ripgrep
     sharutils
     sshuttle
@@ -33,12 +33,37 @@ let
     zip
   ];
 
+  commonHomeManagerEnabledPkgs = pkgs: with pkgs;
+  let
+  in [
+    amber
+    apg
+    bc
+    entr
+    exa
+    fd
+    file
+    thefuck
+    ipcalc
+    magic-wormhole
+    mailutils
+    mosh
+    ncat
+    ngrok
+    nix-index
+    openssl_1_1
+    python310Packages.python
+    ripgrep
+    sharutils
+    sshuttle
+    tree
+    unison
+    unzip
+    zip
+  ];
+
   desktopPkgs = pkgs: with pkgs;
   let
-    mumble = pkgs.mumble.override {
-      speechdSupport = true;
-    };
-
     myVim = pkgs.vim_configurable.customize {
       name = "vim";
       vimrcConfig.packages.thisPackage.start = [ vimPlugins.vim-nix vimPlugins.elm-vim ];
@@ -59,29 +84,27 @@ let
     gitAndTools.qgit
     gtk_engines
     img2pdf
-    kdeApplications.kwalletmanager
+    kwalletmanager
     korganizer
-    mumble
     myVim
     okular
-    qutebrowser
     pdftk
+    simple-scan
     simplescreenrecorder
     spectacle
     sqlitebrowser
-    thunderbird
+    thunderbird-bin
     vlc
     wireshark
     xdg-user-dirs
     youtube-dl
     xsane
     xclip
-    zeal
+    #zeal
   ];
 
   develAllPkgs = pkgs: with pkgs; [
     cloc
-    cookiecutter
     dhall
     graphviz
     hexedit
@@ -89,18 +112,18 @@ let
     httpie
     jq
     lorri
-    mercurial
     nixfmt
     nix-prefetch-scripts
-    nodePackages.grunt-cli
+    nix-prefetch-github
     patchelf
+    python310Packages.black
+    python310Packages.isort
     redis
     remarshal
     sassc
     sqlite
     telnet
     universal-ctags
-    vagrant
     wrk
   ];
 
@@ -171,6 +194,10 @@ in pkgs: {
         ]);
       };
 
-      all_pkgs_vader = all_pkgs_amorphis;
+      all_pkgs_vader = pkgs.buildEnv {
+        name = "all_pkgs";
+        pathsToLink = [ "/bin" "/share" "/lib" ];
+        paths = (commonHomeManagerEnabledPkgs pkgs) ++ (desktopPkgs pkgs) ++ (develPkgs pkgs);
+      };
     };
 }
