@@ -184,11 +184,17 @@ nish() {
     nix-shell -p "$@" --run zsh
 }
 
-
 out() {
     zsh .out-syncrc "$@"
 }
 
 in() {
     zsh .in-syncrc "$@"
+}
+
+eval "$(direnv hook zsh)"
+
+TRAPHUP() {
+      print "Caught HUP, reloading zsh"
+        . ~/.zshrc
 }
