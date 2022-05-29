@@ -1,8 +1,0 @@
-export REDMINE_DIR=~/git/redmine
-export EKP_DIR=~/git/ekklesia-portal
-export AL_DIR=~/git/worksets/alphanodes
-
-alias ekp="cd $ARG_DIR"
-alias red="cd $REDMINE_DIR"
-alias al="cd $AL_DIR"
-alias rsh="cd $REDMINE_DIR; nish"

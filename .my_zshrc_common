@@ -1,5 +1,4 @@
 source ~/.keychain/`hostname`-sh &> /dev/null
-source ~/.dotfiles/z.sh
 
 export FZF_DEFAULT_COMMAND='fd'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -76,15 +75,6 @@ function xg {
     git annex copy --to belakor "$@"
 }
 
-### docker
-
-alias d='docker'
-alias sd="sudo docker"
-alias dpidof="docker inspect --format {{.State.Pid}}"
-alias -g TMUX="script /dev/null -c 'TERM=xterm bash -ilc tmux -2'"
-alias dex="docker exec -it"
-
-
 ### rails dev
 
 alias rails="bundle exec rails"
@@ -118,19 +108,15 @@ function update-persistent-nix-shell() {
     nix-instantiate --indirect --add-root $PWD/shell.drv
 }
 
-
 ### other
+
 
 alias pcwd="source ~/.scripts/pcwd"
 alias newest_file="ls -1t | head -n1"
 alias dum='du -m --max-depth=1'
-alias sl='ls --color'
 alias tz="tar xzf"
 alias tj="tar xjf"
 alias ls="ls --color"
-alias rs="rsync -a --stats --rsh='ssh -p 35'"
-alias rsl="rsync -a --stats --rsh='ssh -p 35 -oNoneEnabled=yes -oNoneSwitch=yes -oHPNBufferSize=8192 -v'"
-alias rsn="rsync -a --stats --rsh='ssh -p 22'"
 alias m="mount"
 alias pstat="python -mpstats"
 alias shm="cd /dev/shm"
@@ -168,8 +154,6 @@ function nb() {
 }
 
 function nbu() { nb "$@" --argstr channel unstable }
-
-function update_pipenv() { pipenv update && git commit Pipfile.lock -m "update Pipenv.lock"  }
 
 # pretty json output with formatting, highlighting (by jq) and line numbers (by bat)
 function jat { jq '.' -C < "$1" | bat }
