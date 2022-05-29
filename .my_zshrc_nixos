@@ -1,15 +1,3 @@
-alias vi=vim
-alias ctl="systemctl --user"
-
-rwhich() {
-    WHICH=`which $1`
-    if [[ $? == 0 ]] then 
-        readlink -f $WHICH
-    else
-        echo $WHICH
-    fi
-}
-
-nish() { 
-    nix-shell -p "$@" --run zsh 
-}
+alias sc="systemctl"
+alias jc="journalctl"
+alias usc="systemctl --user"
