@@ -47,7 +47,7 @@ ZSH_CUSTOM=~/.dotfiles/omz-custom
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git dirhistory git-extras tmux urltools vi-mode)  
+plugins=(git dirhistory systemd vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,3 +102,13 @@ fi
 
 . ~/.nix-profile/share/fzf/completion.zsh
 . ~/.nix-profile/share/fzf/key-bindings.zsh
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
+eval "$(starship init zsh)"
+
+eval "$(zoxide init zsh)"
+
+any-nix-shell zsh --info-right | source /dev/stdin
